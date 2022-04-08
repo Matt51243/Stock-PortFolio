@@ -13,6 +13,7 @@
 		C9CAE7E32800E3AC006E9F55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CAE7E12800E3AC006E9F55 /* Main.storyboard */; };
 		C9CAE7E52800E3AD006E9F55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CAE7E42800E3AD006E9F55 /* Assets.xcassets */; };
 		C9CAE7E82800E3AD006E9F55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CAE7E62800E3AD006E9F55 /* LaunchScreen.storyboard */; };
+		C9CAE7F02800F071006E9F55 /* AddNewStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAE7EF2800F071006E9F55 /* AddNewStockViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C9CAE7E42800E3AD006E9F55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9CAE7E72800E3AD006E9F55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9CAE7E92800E3AD006E9F55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9CAE7EF2800F071006E9F55 /* AddNewStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewStockViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +58,11 @@
 		C9CAE7DA2800E3AC006E9F55 /* Stock PortFolio */ = {
 			isa = PBXGroup;
 			children = (
+				C9CAE7E12800E3AC006E9F55 /* Main.storyboard */,
+				C9CAE7EF2800F071006E9F55 /* AddNewStockViewController.swift */,
 				C9CAE7DB2800E3AC006E9F55 /* AppDelegate.swift */,
 				C9CAE7DD2800E3AC006E9F55 /* SceneDelegate.swift */,
 				C9CAE7DF2800E3AC006E9F55 /* ViewController.swift */,
-				C9CAE7E12800E3AC006E9F55 /* Main.storyboard */,
 				C9CAE7E42800E3AD006E9F55 /* Assets.xcassets */,
 				C9CAE7E62800E3AD006E9F55 /* LaunchScreen.storyboard */,
 				C9CAE7E92800E3AD006E9F55 /* Info.plist */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9CAE7F02800F071006E9F55 /* AddNewStockViewController.swift in Sources */,
 				C9CAE7E02800E3AC006E9F55 /* ViewController.swift in Sources */,
 				C9CAE7DC2800E3AC006E9F55 /* AppDelegate.swift in Sources */,
 				C9CAE7DE2800E3AC006E9F55 /* SceneDelegate.swift in Sources */,

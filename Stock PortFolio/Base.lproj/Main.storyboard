@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="787" y="94"/>
         </scene>
-        <!--View Controller-->
+        <!--Add New Stock View Controller-->
         <scene sceneID="E6g-8Z-h4k">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="lM0-Y6-gcH" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="lM0-Y6-gcH" customClass="AddNewStockViewController" customModule="Stock_PortFolio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fxj-fs-Gnj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,6 +195,14 @@
                             <constraint firstItem="hcU-i0-KyC" firstAttribute="leading" secondItem="twq-gd-FZA" secondAttribute="leading" constant="30" id="yAo-g5-sYZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="boughtPrice" destination="Hj4-xQ-Pti" id="kda-gK-Ki9"/>
+                        <outlet property="soldPrice" destination="Kdu-hF-5QK" id="Vr5-cj-5xt"/>
+                        <outlet property="tickerSymbol" destination="u5d-pN-EF8" id="5JZ-sk-wDd"/>
+                        <outlet property="timeBoughtDatePicker" destination="dOr-vY-xXK" id="qf0-tM-TNv"/>
+                        <outlet property="timeSoldDatePicker" destination="APD-aB-j7p" id="bFN-RK-Cyz"/>
+                        <outlet property="totalShares" destination="q8N-mJ-luJ" id="rqG-M5-fPt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mSW-hi-1xJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
