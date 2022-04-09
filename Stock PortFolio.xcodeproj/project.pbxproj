@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9C2B0642802229800BE11F7 /* AverageStockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C2B0632802229800BE11F7 /* AverageStockPriceViewController.swift */; };
 		C9CAE7DC2800E3AC006E9F55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAE7DB2800E3AC006E9F55 /* AppDelegate.swift */; };
 		C9CAE7DE2800E3AC006E9F55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAE7DD2800E3AC006E9F55 /* SceneDelegate.swift */; };
 		C9CAE7E02800E3AC006E9F55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAE7DF2800E3AC006E9F55 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C9C2B0632802229800BE11F7 /* AverageStockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageStockPriceViewController.swift; sourceTree = "<group>"; };
 		C9CAE7D82800E3AC006E9F55 /* Stock PortFolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stock PortFolio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CAE7DB2800E3AC006E9F55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9CAE7DD2800E3AC006E9F55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 		C9CAE7CF2800E3AC006E9F55 = {
 			isa = PBXGroup;
 			children = (
+				C9C2B0632802229800BE11F7 /* AverageStockPriceViewController.swift */,
 				C9CAE7DA2800E3AC006E9F55 /* Stock PortFolio */,
 				C9CAE7D92800E3AC006E9F55 /* Products */,
 			);
@@ -147,6 +150,7 @@
 				C9CAE7F02800F071006E9F55 /* AddNewStockViewController.swift in Sources */,
 				C9CAE7E02800E3AC006E9F55 /* ViewController.swift in Sources */,
 				C9CAE7DC2800E3AC006E9F55 /* AppDelegate.swift in Sources */,
+				C9C2B0642802229800BE11F7 /* AverageStockPriceViewController.swift in Sources */,
 				C9CAE7F22800F770006E9F55 /* ProfitLossCalculatorViewController.swift in Sources */,
 				C9CAE7DE2800E3AC006E9F55 /* SceneDelegate.swift in Sources */,
 			);
