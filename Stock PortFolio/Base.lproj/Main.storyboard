@@ -119,10 +119,16 @@
                                 <rect key="frame" x="45" y="737" width="324" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Calculate"/>
+                                <connections>
+                                    <action selector="calculateButton:" destination="Dfo-Oe-l9b" eventType="touchUpInside" id="esW-3B-Jzn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiA-4f-mEo">
                                 <rect key="frame" x="55" y="686" width="304" height="31"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="+"/>
+                                <connections>
+                                    <action selector="addMoreButton:" destination="Dfo-Oe-l9b" eventType="touchUpInside" id="giO-nc-XSz"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shares:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qT-kq-wqm">
                                 <rect key="frame" x="30" y="102" width="83.5" height="34.5"/>
@@ -133,16 +139,22 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shares Bought at Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DyF-2A-Wh0">
                                 <rect key="frame" x="123.5" y="102" width="260.5" height="34"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Price Bought " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hB-gc-zhB">
                                 <rect key="frame" x="152" y="157" width="232" height="34"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwO-9L-hmw">
                                 <rect key="frame" x="30" y="156.5" width="112" height="34.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfe-Du-v0F">
+                                <rect key="frame" x="10" y="536" width="394" height="0.0"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -162,15 +174,25 @@
                             <constraint firstItem="bH3-hS-HKl" firstAttribute="top" secondItem="uiA-4f-mEo" secondAttribute="bottom" constant="20" id="Qux-1s-SGh"/>
                             <constraint firstItem="hQH-1t-rMt" firstAttribute="trailing" secondItem="KXk-Q9-0NE" secondAttribute="trailing" constant="10" id="U7t-WT-54L"/>
                             <constraint firstItem="hQH-1t-rMt" firstAttribute="trailing" secondItem="DyF-2A-Wh0" secondAttribute="trailing" constant="30" id="WhR-Qn-Bsn"/>
+                            <constraint firstItem="hfe-Du-v0F" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="10" id="Yb8-Il-hiV"/>
                             <constraint firstItem="4hB-gc-zhB" firstAttribute="leading" secondItem="UwO-9L-hmw" secondAttribute="trailing" constant="10" id="ZGV-gA-Tpe"/>
                             <constraint firstItem="hQH-1t-rMt" firstAttribute="bottom" secondItem="bH3-hS-HKl" secondAttribute="bottom" constant="40" id="bG8-kY-gPy"/>
                             <constraint firstItem="bH3-hS-HKl" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="45" id="fra-3l-laM"/>
                             <constraint firstItem="4hB-gc-zhB" firstAttribute="top" secondItem="DyF-2A-Wh0" secondAttribute="bottom" constant="21" id="gSR-76-vYd"/>
                             <constraint firstItem="DyF-2A-Wh0" firstAttribute="top" secondItem="KXk-Q9-0NE" secondAttribute="bottom" constant="56.5" id="gYK-ng-gIs"/>
                             <constraint firstItem="UwO-9L-hmw" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="30" id="nlI-qs-SlY"/>
+                            <constraint firstItem="uiA-4f-mEo" firstAttribute="top" secondItem="hfe-Du-v0F" secondAttribute="bottom" constant="150" id="utg-XK-VMw"/>
                             <constraint firstItem="hQH-1t-rMt" firstAttribute="trailing" secondItem="uiA-4f-mEo" secondAttribute="trailing" constant="55" id="yPC-an-k37"/>
+                            <constraint firstItem="hQH-1t-rMt" firstAttribute="trailing" secondItem="hfe-Du-v0F" secondAttribute="trailing" constant="10" id="ymj-ud-xAB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buyPriceLabel" destination="UwO-9L-hmw" id="OAi-rW-pGi"/>
+                        <outlet property="buyPriceTextField" destination="4hB-gc-zhB" id="w0b-to-tOr"/>
+                        <outlet property="sharesLabel" destination="9qT-kq-wqm" id="kdh-ui-bnV"/>
+                        <outlet property="sharesTextField" destination="DyF-2A-Wh0" id="P1e-cK-w2k"/>
+                        <outlet property="showResultsLabel" destination="hfe-Du-v0F" id="Glp-E5-oR1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkR-l3-4Zo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

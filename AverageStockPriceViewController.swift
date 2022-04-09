@@ -9,13 +9,38 @@ import UIKit
 
 class AverageStockPriceViewController: UIViewController {
 
+    @IBOutlet var sharesLabel: UILabel!
+    @IBOutlet var sharesTextField: UITextField!
+    @IBOutlet var buyPriceLabel: UILabel!
+    @IBOutlet var buyPriceTextField: UITextField!
+    
+    @IBOutlet var showResultsLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
+    func calculateAveragePrice() {
+        let sharesTextField = sharesTextField.text
+        let buyPriceTextField = buyPriceTextField.text
+        
+        let total1 = Double(buyPriceTextField!)! * Double(sharesTextField!)!
+        
+        if total1 > 0.00 {
+            showResultsLabel.text = String(total1)
+        } else {
+            showResultsLabel.text = "Now...Reality Can Be Whatever I Want"
+        }
+    }
+    
+    @IBAction func addMoreButton(_ sender: Any) {
+        
+    }
+    
+    @IBAction func calculateButton(_ sender: Any) {
+        calculateAveragePrice()
+    }
+    
     /*
     // MARK: - Navigation
 
