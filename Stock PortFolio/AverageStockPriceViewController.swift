@@ -15,6 +15,10 @@ class AverageStockPriceViewController: UIViewController {
     @IBOutlet var buyPriceTextField: UITextField!
     
     @IBOutlet var showResultsLabel: UILabel!
+    @IBOutlet var showTotalSharesLabel: UILabel!
+    
+    @IBOutlet var sharesTextfield2: UITextField!
+    @IBOutlet var priceBought2: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +27,19 @@ class AverageStockPriceViewController: UIViewController {
     func calculateAveragePrice() {
         let sharesTextField = sharesTextField.text
         let buyPriceTextField = buyPriceTextField.text
+        let sharesTextField2 = sharesTextfield2.text
+        let priceBought2 = priceBought2.text
         
-        let total1 = Double(buyPriceTextField!)! * Double(sharesTextField!)!
+        let totalShares = Double(sharesTextField!)! + Double(sharesTextField2!)!
         
-        if total1 > 0.00 {
-            showResultsLabel.text = String(total1)
+        let totalAmountBought = (Double(sharesTextField!)! * Double(buyPriceTextField!)!) + Double(sharesTextField2!)! * Double(priceBought2!)!
+        
+        let total = totalAmountBought / totalShares
+        
+        
+        if total > 0.00 {
+            showResultsLabel.text = "Price: $\(String(total))"
+            showTotalSharesLabel.text = "Total Shares: \(Int(totalShares))"
         } else {
             showResultsLabel.text = "Now...Reality Can Be Whatever I Want"
         }

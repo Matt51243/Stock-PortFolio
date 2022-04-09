@@ -46,7 +46,6 @@
 		C9CAE7CF2800E3AC006E9F55 = {
 			isa = PBXGroup;
 			children = (
-				C9C2B0632802229800BE11F7 /* AverageStockPriceViewController.swift */,
 				C9CAE7DA2800E3AC006E9F55 /* Stock PortFolio */,
 				C9CAE7D92800E3AC006E9F55 /* Products */,
 			);
@@ -65,6 +64,7 @@
 			children = (
 				C9CAE7E12800E3AC006E9F55 /* Main.storyboard */,
 				C9CAE7F12800F770006E9F55 /* ProfitLossCalculatorViewController.swift */,
+				C9C2B0632802229800BE11F7 /* AverageStockPriceViewController.swift */,
 				C9CAE7EF2800F071006E9F55 /* AddNewStockViewController.swift */,
 				C9CAE7DB2800E3AC006E9F55 /* AppDelegate.swift */,
 				C9CAE7DD2800E3AC006E9F55 /* SceneDelegate.swift */,
