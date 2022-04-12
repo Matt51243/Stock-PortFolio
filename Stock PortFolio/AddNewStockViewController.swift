@@ -41,6 +41,22 @@ class AddNewStockViewController: UIViewController {
         timeSoldLabel.addGestureRecognizer(tapTimeSoldLabel)
     }
     
+    @IBAction func boughtDateChanged(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeStyle = DateFormatter.Style.short
+        let date = dateFormatter.string(from: timeBoughtDatePicker.date)
+        timeBoughtLabel.text = date
+    }
+    
+    @IBAction func soldDateChanged(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeStyle = DateFormatter.Style.short
+        let date = dateFormatter.string(from: timeBoughtDatePicker.date)
+        timeSoldLabel.text = date
+    }
+    
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
         switch basicOrAdvanced.selectedSegmentIndex {
         case 0:
