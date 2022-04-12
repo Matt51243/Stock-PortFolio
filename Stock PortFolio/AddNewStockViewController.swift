@@ -8,6 +8,7 @@
 import UIKit
 
 class AddNewStockViewController: UIViewController {
+    
     @IBOutlet var boughtPrice: UITextField!
     @IBOutlet var soldPrice: UITextField!
     @IBOutlet var totalShares: UITextField!
@@ -44,6 +45,10 @@ class AddNewStockViewController: UIViewController {
         datePicker.addTarget(self, action: #selector(boughtDateChanged(_:)), for: .valueChanged)
     }
 
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func boughtDateChanged(_ sender: Any) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short

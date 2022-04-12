@@ -377,6 +377,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Cancel">
                                     <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="lM0-Y6-gcH" eventType="touchUpInside" id="hWv-jN-T9w"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Stock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIl-sr-tnP">
                                 <rect key="frame" x="145" y="63" width="117" height="21"/>
