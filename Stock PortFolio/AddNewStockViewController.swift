@@ -31,7 +31,6 @@ class AddNewStockViewController: UIViewController {
         timeBoughtLabel.isHidden = true
         timeBoughtLabelThatIsntDate.isHidden = true
         
-        
         let tapTimeBoughtLabel = UITapGestureRecognizer(target: self, action: #selector(AddNewStockViewController.tapBoughtFunction))
         timeBoughtLabel.isUserInteractionEnabled = true
         timeBoughtLabel.addGestureRecognizer(tapTimeBoughtLabel)
@@ -39,14 +38,25 @@ class AddNewStockViewController: UIViewController {
         let tapTimeSoldLabel = UITapGestureRecognizer(target: self, action: #selector(AddNewStockViewController.tapSoldFunction))
         timeSoldLabel.isUserInteractionEnabled = true
         timeSoldLabel.addGestureRecognizer(tapTimeSoldLabel)
+        
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.addTarget(self, action: #selector(boughtDateChanged(_:)), for: .valueChanged)
     }
-    
+
     @IBAction func boughtDateChanged(_ sender: Any) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
         dateFormatter.timeStyle = DateFormatter.Style.short
         let date = dateFormatter.string(from: timeBoughtDatePicker.date)
         timeBoughtLabel.text = date
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.timeSoldLabel.isHidden = false
+            self.timeSoldLabelThatIsntDate.isHidden = false
+            self.timeBoughtDatePicker.isHidden = true
+            self.timeSoldDatePicker.isHidden = false
+        }
     }
     
     @IBAction func soldDateChanged(_ sender: Any) {
@@ -64,6 +74,8 @@ class AddNewStockViewController: UIViewController {
             timeSoldLabelThatIsntDate.isHidden = true
             timeBoughtLabel.isHidden = true
             timeBoughtLabelThatIsntDate.isHidden = true
+            timeSoldDatePicker.isHidden = true
+            timeBoughtDatePicker.isHidden = true
         case 1:
             timeSoldLabel.isHidden = false
             timeSoldLabelThatIsntDate.isHidden = false
@@ -79,15 +91,16 @@ class AddNewStockViewController: UIViewController {
         timeSoldLabel.isHidden = true
         timeBoughtDatePicker.isHidden = false
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.timeSoldLabel.isHidden = false
-            self.timeSoldLabelThatIsntDate.isHidden = false
-            self.timeBoughtDatePicker.isHidden = true
-            self.timeSoldDatePicker.isHidden = false
+        if timeBoughtDatePicker.isHidden == false {
+            timeSoldDatePicker.isHidden = true
         }
     }
     
     @objc func tapSoldFunction(sender: UITapGestureRecognizer) {
         timeSoldDatePicker.isHidden = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.timeSoldDatePicker.isHidden = true
+        }
     }
 }
