@@ -9,6 +9,8 @@ import UIKit
 
 class AddNewStockViewController: UIViewController {
     
+    var stockInfo: StockInfo?
+    
     @IBOutlet var boughtPrice: UITextField!
     @IBOutlet var soldPrice: UITextField!
     @IBOutlet var totalShares: UITextField!
@@ -44,7 +46,7 @@ class AddNewStockViewController: UIViewController {
         datePicker.datePickerMode = .dateAndTime
         datePicker.addTarget(self, action: #selector(boughtDateChanged(_:)), for: .valueChanged)
     }
-
+    
     @IBAction func cancelButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -107,5 +109,18 @@ class AddNewStockViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.timeSoldDatePicker.isHidden = true
         }
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let tickerSymbol = tickerSymbol.text,
+              let boughtPriceString = boughtPrice.text,
+              let boughtPrice = Double(boughtPriceString),
+              let soldPriceString = soldPrice.text,
+              let soldPrice = Double(soldPriceString),
+              let sharesString = totalShares.text,
+              let shares = Int(sharesString) else { return }
+        
+        stockInfo = StockInfo(tickerSymbol: tickerSymbol, boughtPrice: boughtPrice, soldPrice: soldPrice, shares: shares)
+        performSegue(withIdentifier: "goToStockMainPage", sender: self)
     }
 }
