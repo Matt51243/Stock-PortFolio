@@ -29,6 +29,7 @@ class AddNewStockViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         timeSoldLabel.isHidden = true
         timeSoldLabelThatIsntDate.isHidden = true
         timeBoughtLabel.isHidden = true
@@ -111,16 +112,17 @@ class AddNewStockViewController: UIViewController {
         }
     }
     
-    @IBAction func saveButtonTapped(_ sender: Any) {
-        guard let tickerSymbol = tickerSymbol.text,
-              let boughtPriceString = boughtPrice.text,
-              let boughtPrice = Double(boughtPriceString),
-              let soldPriceString = soldPrice.text,
-              let soldPrice = Double(soldPriceString),
-              let sharesString = totalShares.text,
-              let shares = Int(sharesString) else { return }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "saveUnwind" else { return }
         
-        stockInfo = StockInfo(tickerSymbol: tickerSymbol, boughtPrice: boughtPrice, soldPrice: soldPrice, shares: shares)
-        performSegue(withIdentifier: "goToStockMainPage", sender: self)
+        let tickerSymbol = tickerSymbol.text
+        let boughtPriceString = boughtPrice.text
+        let boughtPrice = Double(boughtPriceString ?? "")
+        let soldPriceString = soldPrice.text ?? ""
+        let soldPrice = Double(soldPriceString)
+        let sharesString = totalShares.text ?? ""
+        let shares = Int(sharesString)
+        
+        stockInfo = StockInfo(tickerSymbol: tickerSymbol!, boughtPrice: boughtPrice!, soldPrice: soldPrice!, shares: shares!)
     }
 }

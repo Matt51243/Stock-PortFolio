@@ -39,7 +39,7 @@
         <!--Stocks-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StockMainPageViewController" customModule="Stock_PortFolio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StockCell" rowHeight="60" id="UGu-ut-nwc" customClass="StockTableViewCell" customModule="Stock_PortFolio" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stockCell" rowHeight="60" id="UGu-ut-nwc" customClass="StockTableViewCell" customModule="Stock_PortFolio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UGu-ut-nwc" id="bgh-Pg-wSP">
@@ -135,7 +135,7 @@
                                             <outlet property="tickerSymbol" destination="gm7-MB-FUz" id="MDA-qr-I5c"/>
                                             <outlet property="totalShares" destination="nxJ-yD-y2k" id="7Dy-f8-Fhq"/>
                                             <outlet property="upOrDownImage" destination="d7m-tI-LdD" id="bZx-Qv-T0q"/>
-                                            <segue destination="ST6-VV-8N8" kind="presentation" id="Jtu-5B-8Uh"/>
+                                            <segue destination="ST6-VV-8N8" kind="showDetail" identifier="viewStock" trigger="accessoryAction" id="Rne-xB-7fQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -152,10 +152,13 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CpT-PS-K03">
                             <connections>
-                                <segue destination="lM0-Y6-gcH" kind="presentation" id="8Rm-QP-UyA"/>
+                                <segue destination="lM0-Y6-gcH" kind="showDetail" identifier="addNewStock" id="1qS-pW-gcl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="gHc-a3-8d2" id="uXH-jn-Ry6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -432,6 +435,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="saveButtonTapped:" destination="lM0-Y6-gcH" eventType="touchUpInside" id="ptf-MW-ib8"/>
+                                    <segue destination="0l9-j6-hkk" kind="unwind" identifier="saveUnwind" unwindAction="unwindToStockMainPageWithSegue:" id="OEI-Qa-xBQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1U-g4-s3a">
@@ -589,6 +593,7 @@
                             <constraint firstItem="A5O-uF-5xb" firstAttribute="top" secondItem="tzR-f5-6AQ" secondAttribute="bottom" constant="25" id="yc3-OI-Ije"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="aXV-QQ-4Yd"/>
                     <connections>
                         <outlet property="basicOrAdvanced" destination="Zap-rK-x6h" id="Dh6-Cg-RCe"/>
                         <outlet property="boughtPrice" destination="Hj4-xQ-Pti" id="kda-gK-Ki9"/>
@@ -601,13 +606,12 @@
                         <outlet property="timeSoldLabel" destination="WY0-ZL-hs8" id="ANa-mN-x9b"/>
                         <outlet property="timeSoldLabelThatIsntDate" destination="iaS-Hq-RSs" id="qnJ-Y3-NMf"/>
                         <outlet property="totalShares" destination="q8N-mJ-luJ" id="rqG-M5-fPt"/>
-                        <segue destination="0l9-j6-hkk" kind="unwind" identifier="goToStockMainPage" unwindAction="unwind:" id="H9Q-8M-bL7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mSW-hi-1xJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="0l9-j6-hkk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1534.7826086956522" y="93.75"/>
+            <point key="canvasLocation" x="1658" y="94"/>
         </scene>
         <!--Added Stock View Controller-->
         <scene sceneID="qau-b2-MbN">
