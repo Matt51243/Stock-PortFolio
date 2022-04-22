@@ -13,3 +13,12 @@ struct StockInfo: Codable {
     var soldPrice: Double
     var shares: Int
 }
+
+struct StockInfoAndDate: Codable {
+    var tickerSymbol: String
+    var boughtPrice: Double
+    var soldPrice: Double
+    var shares: Int
+    var timeBought: Date
+    var timeSold: Date
+}
