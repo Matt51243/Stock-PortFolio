@@ -7,12 +7,14 @@
 
 import UIKit
 
-class StockMainPageViewController: UIViewController {
+class StockMainPageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,24 +26,14 @@ class StockMainPageViewController: UIViewController {
     
     @IBAction func unwindToStockMainPage(segue: UIStoryboardSegue) {
         guard segue.identifier == "saveUnwind", let sourceViewController = segue.source as? AddNewStockViewController, let stock = sourceViewController.stockInfo else { return }
-        let newIndexPath = IndexPath(row: stockArray.count, section: 0)
+        let indexPath = IndexPath(row: stockArray.count, section: 0)
         stockArray.append(stock)
-        tableView.insertRows(at: [newIndexPath], with: .automatic)
+        tableView.insertRows(at: [indexPath], with: .automatic)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "addNewStock", let vc = segue.destination as? AddNewStockViewController  {
-//        }
-//
-//        if segue.identifier == "viewStock", let vc = segue.destination as? AddedStockViewController {
-//        }
-//    }
-}
-
-
-extension StockMainPageViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentStock = stockArray[indexPath.row]
+        performSegue(withIdentifier: "viewStock", sender: currentStock)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,9 +43,25 @@ extension StockMainPageViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath) as! StockTableViewCell
         let stock = stockArray[indexPath.row]
+        let calculatedBought = stock.boughtPrice * Double(stock.shares)
+        let calculatedSold = stock.soldPrice * Double(stock.shares)
+        let calculatedProfitLoss = calculatedSold - calculatedBought
         cell.tickerSymbol.text = stock.tickerSymbol
-        cell.totalShares.text = String(stock.shares)
-        cell.profitLossLabel.text = String(stock.soldPrice - stock.boughtPrice)
+        cell.totalShares.text = String("\(stock.shares) shares")
+        cell.profitLossLabel.text = String(calculatedProfitLoss)
+        
+        if calculatedProfitLoss > 0.01 {
+            cell.profitLossLabel.textColor = .green
+        } else if calculatedProfitLoss == 0.0000 {
+            cell.profitLossLabel.text = "Broke Even!"
+        } else {
+            cell.profitLossLabel.textColor = .red
+        }
         return cell
     }
 }
+
+
+
+
+
