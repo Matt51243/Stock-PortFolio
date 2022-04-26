@@ -23,5 +23,23 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        setTotalTrades()
+        calculateTotalProfit()
+    }
+    
+    func setTotalTrades() {
+        if stockArray.count == 0 {
+            totalTradesMadeLabel.text = "NA"
+        } else if stockArray.count >= 1 {
+            totalTradesMadeLabel.text = String(stockArray.count)
+        }
+    }
+    
+    //Not sure how do this right here
+    func calculateTotalProfit() {
+        let filteredPositive = stockArray.filter { stock in
+            return (stock.soldPrice) - (stock.boughtPrice) >= 0.0001
+        }
+    }
 }

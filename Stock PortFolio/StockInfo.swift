@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StockInfo: Codable {
+struct StockInfo {
     var tickerSymbol: String
     var boughtPrice: Double
     var soldPrice: Double

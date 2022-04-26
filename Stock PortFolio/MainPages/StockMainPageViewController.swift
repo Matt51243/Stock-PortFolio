@@ -7,6 +7,8 @@
 
 import UIKit
 
+var stockArray: [StockInfo] = []
+
 class StockMainPageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var tableView: UITableView!
@@ -23,8 +25,6 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
-    
-    var stockArray: [StockInfo] = []
     
     @IBAction func unwindToStockMainPage(segue: UIStoryboardSegue) {
         guard segue.identifier == "saveUnwind", let sourceViewController = segue.source as? AddNewStockViewController, let stock = sourceViewController.stockInfo else { return }
