@@ -54,10 +54,13 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
         
         if calculatedProfitLoss > 0.01 {
             cell.profitLossLabel.textColor = customGreenColor
+            cell.profitLossLabel.text = String("+ $\(calculatedProfitLoss)")
         } else if calculatedProfitLoss == 0.0000 {
             cell.profitLossLabel.text = "Broke Even!"
+            cell.profitLossLabel.textColor = .black
         } else {
             cell.profitLossLabel.textColor = .red
+            cell.profitLossLabel.text = String("- $\(calculatedProfitLoss)")
         }
         return cell
     }
