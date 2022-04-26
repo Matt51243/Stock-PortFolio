@@ -11,6 +11,7 @@
 		C96D5CE92809C76300F629B7 /* StockInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96D5CE82809C76300F629B7 /* StockInfo.swift */; };
 		C96D5CF3280EFA5E00F629B7 /* StockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96D5CF2280EFA5E00F629B7 /* StockTableViewCell.swift */; };
 		C96D5CF5280EFBFF00F629B7 /* StockMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96D5CF4280EFBFF00F629B7 /* StockMainPageViewController.swift */; };
+		C96D5CF828183E2400F629B7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96D5CF728183E2400F629B7 /* ProfileViewController.swift */; };
 		C9C2B0642802229800BE11F7 /* AverageStockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C2B0632802229800BE11F7 /* AverageStockPriceViewController.swift */; };
 		C9CAE7DC2800E3AC006E9F55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAE7DB2800E3AC006E9F55 /* AppDelegate.swift */; };
 		C9CAE7DE2800E3AC006E9F55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAE7DD2800E3AC006E9F55 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 		C96D5CE82809C76300F629B7 /* StockInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockInfo.swift; sourceTree = "<group>"; };
 		C96D5CF2280EFA5E00F629B7 /* StockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewCell.swift; sourceTree = "<group>"; };
 		C96D5CF4280EFBFF00F629B7 /* StockMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockMainPageViewController.swift; sourceTree = "<group>"; };
+		C96D5CF728183E2400F629B7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C9C2B0632802229800BE11F7 /* AverageStockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageStockPriceViewController.swift; sourceTree = "<group>"; };
 		C9CAE7D82800E3AC006E9F55 /* Stock PortFolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stock PortFolio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CAE7DB2800E3AC006E9F55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				C9CAE7E12800E3AC006E9F55 /* Main.storyboard */,
+				C96D5CF728183E2400F629B7 /* ProfileViewController.swift */,
 				C9CAE7DB2800E3AC006E9F55 /* AppDelegate.swift */,
 				C96D5CE82809C76300F629B7 /* StockInfo.swift */,
 				C9CAE7DD2800E3AC006E9F55 /* SceneDelegate.swift */,
@@ -174,6 +177,7 @@
 			files = (
 				C9CAE7F02800F071006E9F55 /* AddNewStockViewController.swift in Sources */,
 				C96D5CDF28087FFC00F629B7 /* AddedStockViewController.swift in Sources */,
+				C96D5CF828183E2400F629B7 /* ProfileViewController.swift in Sources */,
 				C9CAE7DC2800E3AC006E9F55 /* AppDelegate.swift in Sources */,
 				C9C2B0642802229800BE11F7 /* AverageStockPriceViewController.swift in Sources */,
 				C96D5CF3280EFA5E00F629B7 /* StockTableViewCell.swift in Sources */,
