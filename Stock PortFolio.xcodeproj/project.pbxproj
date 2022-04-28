@@ -12,6 +12,7 @@
 		C96D5CF3280EFA5E00F629B7 /* StockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96D5CF2280EFA5E00F629B7 /* StockTableViewCell.swift */; };
 		C96D5CF5280EFBFF00F629B7 /* StockMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96D5CF4280EFBFF00F629B7 /* StockMainPageViewController.swift */; };
 		C96D5CF828183E2400F629B7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96D5CF728183E2400F629B7 /* ProfileViewController.swift */; };
+		C96D5D43281ADBC800F629B7 /* StoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96D5D42281ADBC800F629B7 /* StoreItem.swift */; };
 		C9C2B0642802229800BE11F7 /* AverageStockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C2B0632802229800BE11F7 /* AverageStockPriceViewController.swift */; };
 		C9CAE7DC2800E3AC006E9F55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAE7DB2800E3AC006E9F55 /* AppDelegate.swift */; };
 		C9CAE7DE2800E3AC006E9F55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAE7DD2800E3AC006E9F55 /* SceneDelegate.swift */; };
@@ -28,6 +29,7 @@
 		C96D5CF2280EFA5E00F629B7 /* StockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewCell.swift; sourceTree = "<group>"; };
 		C96D5CF4280EFBFF00F629B7 /* StockMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockMainPageViewController.swift; sourceTree = "<group>"; };
 		C96D5CF728183E2400F629B7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C96D5D42281ADBC800F629B7 /* StoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItem.swift; sourceTree = "<group>"; };
 		C9C2B0632802229800BE11F7 /* AverageStockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageStockPriceViewController.swift; sourceTree = "<group>"; };
 		C9CAE7D82800E3AC006E9F55 /* Stock PortFolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stock PortFolio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CAE7DB2800E3AC006E9F55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				C9CAE7E42800E3AD006E9F55 /* Assets.xcassets */,
 				C9CAE7E62800E3AD006E9F55 /* LaunchScreen.storyboard */,
 				C9CAE7E92800E3AD006E9F55 /* Info.plist */,
+				C96D5D42281ADBC800F629B7 /* StoreItem.swift */,
 			);
 			path = "Stock PortFolio";
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				C96D5CF828183E2400F629B7 /* ProfileViewController.swift in Sources */,
 				C9CAE7DC2800E3AC006E9F55 /* AppDelegate.swift in Sources */,
 				C9C2B0642802229800BE11F7 /* AverageStockPriceViewController.swift in Sources */,
+				C96D5D43281ADBC800F629B7 /* StoreItem.swift in Sources */,
 				C96D5CF3280EFA5E00F629B7 /* StockTableViewCell.swift in Sources */,
 				C96D5CE92809C76300F629B7 /* StockInfo.swift in Sources */,
 				C9CAE7F22800F770006E9F55 /* ProfitLossCalculatorViewController.swift in Sources */,
@@ -338,8 +342,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -349,7 +355,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -365,8 +371,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,7 +384,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

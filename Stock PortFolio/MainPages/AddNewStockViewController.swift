@@ -11,6 +11,8 @@ class AddNewStockViewController: UIViewController {
     
     var stockInfo: StockInfo?
     
+    @IBOutlet var SaveButton: UIButton!
+    
     @IBOutlet var boughtPrice: UITextField!
     @IBOutlet var soldPrice: UITextField!
     @IBOutlet var totalShares: UITextField!
@@ -46,8 +48,22 @@ class AddNewStockViewController: UIViewController {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .dateAndTime
         datePicker.addTarget(self, action: #selector(boughtDateChanged(_:)), for: .valueChanged)
+        
+        
+        //Disables the Save Button if textfield are empty
+        SaveButton.isEnabled = false
+        [tickerSymbol, boughtPrice, soldPrice, totalShares].forEach({ $0?.addTarget(self, action: #selector(editingChanged), for: .editingChanged)})
+    }
+
+    
+    //Disables the Save Button if textfield are empty
+    @objc func editingChanged(_ textField: UITextField) {
+        if tickerSymbol.hasText && boughtPrice.hasText && soldPrice.hasText && totalShares.hasText {
+            SaveButton.isEnabled = true
+        }
     }
     
+    //when cancel button is pressed this makes it disappear
     @IBAction func cancelButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -112,6 +128,7 @@ class AddNewStockViewController: UIViewController {
         }
     }
     
+    //For when You tap the save button
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch basicOrAdvanced.selectedSegmentIndex {
         case 0:
@@ -124,6 +141,8 @@ class AddNewStockViewController: UIViewController {
             let shares = Int(sharesString)
 
             stockInfo = StockInfo(tickerSymbol: tickerSymbol!, boughtPrice: boughtPrice!, soldPrice: soldPrice!, shares: shares!)
+            
+            
         case 1:
             let tickerSymbol = tickerSymbol.text
             let boughtPriceString = boughtPrice.text

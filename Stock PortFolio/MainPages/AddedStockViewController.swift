@@ -8,7 +8,7 @@
 import UIKit
 
 class AddedStockViewController: UIViewController {
-
+    
     @IBOutlet var tickerSymbolLabel: UILabel!
     @IBOutlet var totalSharesLabel: UILabel!
     @IBOutlet var totalMoneyMadeLostLabel: UILabel!
@@ -16,9 +16,18 @@ class AddedStockViewController: UIViewController {
     @IBOutlet var soldForLabel: UILabel!
     @IBOutlet var possibleGraphsLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+   
+    
+
     
 
     /*

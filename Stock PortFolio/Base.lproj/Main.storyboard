@@ -717,6 +717,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="aXV-QQ-4Yd"/>
                     <connections>
+                        <outlet property="SaveButton" destination="RkT-a5-DyT" id="Puk-zj-CbO"/>
                         <outlet property="basicOrAdvanced" destination="Zap-rK-x6h" id="Dh6-Cg-RCe"/>
                         <outlet property="boughtPrice" destination="Hj4-xQ-Pti" id="kda-gK-Ki9"/>
                         <outlet property="soldPrice" destination="Kdu-hF-5QK" id="Vr5-cj-5xt"/>
@@ -783,11 +784,11 @@
                         <viewLayoutGuide key="safeArea" id="jL8-De-2oA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0aX-T7-8HR" firstAttribute="leading" secondItem="hHd-oU-gee" secondAttribute="trailing" constant="77" id="8Z5-7y-KIN"/>
                             <constraint firstItem="Z2b-kl-kqA" firstAttribute="top" secondItem="ICU-S3-rQe" secondAttribute="bottom" constant="10" id="D7R-7Z-WHn"/>
                             <constraint firstItem="bg4-0M-SDQ" firstAttribute="top" secondItem="jL8-De-2oA" secondAttribute="top" constant="110" id="DHi-Dq-Nsd"/>
                             <constraint firstItem="0aX-T7-8HR" firstAttribute="top" secondItem="ICU-S3-rQe" secondAttribute="bottom" constant="10" id="KsP-7s-nly"/>
                             <constraint firstItem="mVQ-Xd-Uu8" firstAttribute="top" secondItem="bg4-0M-SDQ" secondAttribute="bottom" constant="70" id="LeX-gc-TI2"/>
+                            <constraint firstItem="Z2b-kl-kqA" firstAttribute="leading" secondItem="0aX-T7-8HR" secondAttribute="trailing" constant="35" id="Pfh-jv-Ibt"/>
                             <constraint firstItem="jL8-De-2oA" firstAttribute="trailing" secondItem="Z2b-kl-kqA" secondAttribute="trailing" constant="35" id="ZvC-yQ-Rn4"/>
                             <constraint firstItem="jL8-De-2oA" firstAttribute="trailing" secondItem="ICU-S3-rQe" secondAttribute="trailing" constant="35" id="aCB-up-SUm"/>
                             <constraint firstItem="hHd-oU-gee" firstAttribute="leading" secondItem="jL8-De-2oA" secondAttribute="leading" constant="35" id="aMu-JC-t3w"/>
