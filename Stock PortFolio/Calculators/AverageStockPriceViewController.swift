@@ -36,9 +36,11 @@ class AverageStockPriceViewController: UIViewController {
         
         let total = totalAmountBought / totalShares
         
+        let totalToTwoPlaces = String(format: "%.2f", total)
+        
         
         if total > 0.00 {
-            showResultsLabel.text = "Price: $\(String(total))"
+            showResultsLabel.text = "Price: $\(String(totalToTwoPlaces))"
             showTotalSharesLabel.text = "Total Shares: \(Int(totalShares))"
         } else {
             showResultsLabel.text = "Now...Reality Can Be Whatever I Want"

@@ -32,6 +32,7 @@ class ProfitLossCalculatorViewController: UIViewController {
         }
     }
     
+    //calculates the profit you would make or the loss you would make
     func calculateProfitOrLoss() {
         let buyPrice = buyPrice.text
         let sellPrice = sellPrice.text
@@ -57,11 +58,12 @@ class ProfitLossCalculatorViewController: UIViewController {
         }
     }
     
+    //action for when the button is tapped
     @IBAction func calculateButton(_ sender: Any) {
         calculateProfitOrLoss()
     }
     
-    //MARK: Done for NumberPad
+    //makes the numberpad have the done button
     func setupToolbar() {
         let bar = UIToolbar()
         let doneBtn = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissMyKeyboard))
