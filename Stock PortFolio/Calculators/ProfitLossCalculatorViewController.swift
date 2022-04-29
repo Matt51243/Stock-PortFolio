@@ -14,9 +14,22 @@ class ProfitLossCalculatorViewController: UIViewController {
     
     @IBOutlet var showResultsLabel: UILabel!
     
+    @IBOutlet var calculateButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupToolbar()
+        
+        //Disabled the calculate button if textfields are empty
+        calculateButton.isEnabled = false
+        [buyPrice, sellPrice, shares].forEach({ $0?.addTarget(self, action: #selector(editingChanged), for: .editingChanged)})
+    }
+    
+    //Disabled the calculate button if textfields are empty
+    @objc func editingChanged(_ textField: UITextField) {
+        if buyPrice.hasText && sellPrice.hasText && shares.hasText {
+            calculateButton.isEnabled = true
+        }
     }
     
     func calculateProfitOrLoss() {
@@ -28,12 +41,15 @@ class ProfitLossCalculatorViewController: UIViewController {
         let sellTotal = Double(sellPrice!)! * Double(shares!)!
         
         let calculatedTotal = sellTotal - buyTotal
+        let calculatedTotalAtTwoDecimals = String(format: "%.2f", calculatedTotal)
+        let calculatedTotalDouble = Double(calculatedTotalAtTwoDecimals)!
+        let absoluteCalculated = abs(calculatedTotalDouble)
         
         if calculatedTotal > 0 {
-            showResultsLabel.text = "Total Profit: $\(calculatedTotal)"
-            showResultsLabel.textColor = .green
+            showResultsLabel.text = "Total Profit: $\(absoluteCalculated)"
+            showResultsLabel.textColor = customGreenColor
         } else if calculatedTotal < 0 {
-            showResultsLabel.text = "Total Loss: $\(calculatedTotal)"
+            showResultsLabel.text = "Total Loss: - $\(absoluteCalculated)"
             showResultsLabel.textColor = .red
         } else {
             showResultsLabel.text = "You Broke Even!"

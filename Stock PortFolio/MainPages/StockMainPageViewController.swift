@@ -7,13 +7,15 @@
 
 import UIKit
 
+let customGreenColor = UIColor(rgb: 0x55B400)
+
 var stockArray: [StockInfo] = []
 
 class StockMainPageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var tableView: UITableView!
     
-    let customGreenColor = UIColor(rgb: 0x55B400)
+    @IBOutlet var noTradesLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,11 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if stockArray.count >= 1 {
+            noTradesLabel.isHidden = true
+        } else if stockArray.count == 0 {
+            noTradesLabel.isHidden = false
+        }
         tableView.reloadData()
     }
     

@@ -190,9 +190,8 @@
                                     <segue destination="Dfo-Oe-l9b" kind="presentation" id="ib5-oe-wBn"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gHc-a3-8d2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gHc-a3-8d2">
                                 <rect key="frame" x="0.0" y="103" width="414" height="587"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stockCell" rowHeight="60" id="UGu-ut-nwc" customClass="StockTableViewCell" customModule="Stock_PortFolio" customModuleProvider="target">
@@ -257,13 +256,26 @@
                                     <segue destination="wcu-pk-Xw5" kind="presentation" id="qoe-c9-GrH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Trades Added Yet. Add a New One" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ou-ve-emZ">
+                                <rect key="frame" x="42.5" y="346" width="329" height="66"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3Ou-ve-emZ" secondAttribute="bottom" constant="450" id="7fP-ff-xIU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Ou-ve-emZ" secondAttribute="trailing" constant="42.5" id="7sI-SW-ruV"/>
                             <constraint firstItem="ciI-Yp-8fD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="NML-uL-6fJ"/>
+                            <constraint firstItem="gHc-a3-8d2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="TFQ-WL-IyM"/>
+                            <constraint firstItem="gHc-a3-8d2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZHG-mT-LfM"/>
+                            <constraint firstItem="ciI-Yp-8fD" firstAttribute="top" secondItem="gHc-a3-8d2" secondAttribute="bottom" constant="144" id="bvw-dt-gZg"/>
                             <constraint firstItem="0WR-mh-ZOy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="fRv-wb-AOL"/>
+                            <constraint firstItem="gHc-a3-8d2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ow4-qK-4Im"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ciI-Yp-8fD" secondAttribute="trailing" constant="30" id="toM-jE-UdT"/>
+                            <constraint firstItem="3Ou-ve-emZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42.5" id="xvP-LR-hYd"/>
                             <constraint firstItem="0WR-mh-ZOy" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yxl-2P-nLb"/>
                         </constraints>
                     </view>
@@ -280,6 +292,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="noTradesLabel" destination="3Ou-ve-emZ" id="ezY-Dn-FSh"/>
                         <outlet property="tableView" destination="gHc-a3-8d2" id="uXH-jn-Ry6"/>
                     </connections>
                 </viewController>
@@ -533,6 +546,7 @@
                     </view>
                     <connections>
                         <outlet property="buyPrice" destination="KaS-wo-EEe" id="EhF-am-j03"/>
+                        <outlet property="calculateButton" destination="GlT-Ah-veT" id="L4I-IO-zcB"/>
                         <outlet property="sellPrice" destination="9j8-Mn-6gr" id="O7B-Jj-bjo"/>
                         <outlet property="shares" destination="hjr-5L-xAS" id="ekF-1V-bYf"/>
                         <outlet property="showResultsLabel" destination="LAV-ev-xcL" id="j8G-Om-q0I"/>
