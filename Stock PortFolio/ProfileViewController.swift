@@ -30,8 +30,11 @@ class ProfileViewController: UIViewController {
         setTotalTrades()
         calculateTotalProfit()
         calculateTotalLosses()
+        biggestProfit()
+        biggestLoss()
     }
     
+    //sets the totalTradesMadeLabel to the amount of trades that they have
     func setTotalTrades() {
         if stockArray.count == 0 {
             totalTradesMadeLabel.text = "NA"
@@ -40,7 +43,7 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    //Adds all of the stocks that they added that are profit and changes the label to that
+    //Adds all of the stocks that they added that are profit and changes totalProfitLabel to that
     func calculateTotalProfit() {
         stockArray.forEach { stock in
             if (stock.soldPrice * Double(stock.shares)) - (stock.boughtPrice * Double(stock.shares)) >= 0.001 {
@@ -55,6 +58,7 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    //Adds all of the stocks that they added that are losses and changes totalLossesLabel to that
     func calculateTotalLosses() {
         stockArray.forEach { stock in
             if (stock.soldPrice * Double(stock.shares)) - (stock.boughtPrice * Double(stock.shares)) < 0.001 {
@@ -63,11 +67,31 @@ class ProfileViewController: UIViewController {
                 let calculatedLoss = totalSoldPrice - totalBoughtPrice
                 
                 calculatedLossArray.append(calculatedLoss)
-                print(calculatedLoss)
                 let totalAddedLosses = calculatedLossArray.reduce(0, +)
                 let absoulteValueLosses = abs(totalAddedLosses)
                 totalLossesLabel.text = String("- $\(absoulteValueLosses)")
             }
+        }
+    }
+    
+    //finds the biggest profit and makes biggestProfitLabel that number
+    func biggestProfit() {
+        let largestProfit = calculatedProfitArray.max()
+        if calculatedProfitArray.count == 0 {
+            biggestProfitLabel.text = "NA"
+        } else if calculatedProfitArray.count >= 1 {
+            biggestProfitLabel.text = String("$\(largestProfit!)")
+        }
+    }
+    
+    //finds the biggest loss and makes biggestLossLabel that number
+    func biggestLoss() {
+        let largestLoss = calculatedLossArray.max()
+        if calculatedLossArray.count == 0 {
+            biggestLossLabel.text = "NA"
+        } else if calculatedLossArray.count >= 1 {
+            let absoluteValueLosses = abs(largestLoss!)
+            biggestLossLabel.text = String("- $\(absoluteValueLosses)")
         }
     }
 }
