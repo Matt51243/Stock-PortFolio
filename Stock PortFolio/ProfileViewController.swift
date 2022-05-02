@@ -8,12 +8,13 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
     
     var calculatedProfitArray = [Double]()
+    var calculatedLossArray = [Double]()
+    
     @IBOutlet var todaysProfitLossLabel: UILabel!
     @IBOutlet var totalProfitLabel: UILabel!
-    @IBOutlet var totalLossesLabel: UIView!
+    @IBOutlet var totalLossesLabel: UILabel!
     
     @IBOutlet var barGraphImage: UIImageView!
     
@@ -28,6 +29,7 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setTotalTrades()
         calculateTotalProfit()
+        calculateTotalLosses()
     }
     
     func setTotalTrades() {
@@ -49,8 +51,22 @@ class ProfileViewController: UIViewController {
                 calculatedProfitArray.append(calculatedProfit)
                 let totalAddedProfit = calculatedProfitArray.reduce(0, +)
                 totalProfitLabel.text = String("$\(totalAddedProfit)")
-            } else {
-                totalProfitLabel.text = "Something Wrong Happened"
+            }
+        }
+    }
+    
+    func calculateTotalLosses() {
+        stockArray.forEach { stock in
+            if (stock.soldPrice * Double(stock.shares)) - (stock.boughtPrice * Double(stock.shares)) < 0.001 {
+                let totalSoldPrice = stock.soldPrice * Double(stock.shares)
+                let totalBoughtPrice = stock.boughtPrice * Double(stock.shares)
+                let calculatedLoss = totalSoldPrice - totalBoughtPrice
+                
+                calculatedLossArray.append(calculatedLoss)
+                print(calculatedLoss)
+                let totalAddedLosses = calculatedLossArray.reduce(0, +)
+                let absoulteValueLosses = abs(totalAddedLosses)
+                totalLossesLabel.text = String("- $\(absoulteValueLosses)")
             }
         }
     }
