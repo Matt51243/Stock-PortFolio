@@ -9,6 +9,8 @@ import UIKit
 
 class AddedStockViewController: UIViewController {
     
+    var mainPage = StockMainPageViewController()
+    
     @IBOutlet var tickerSymbolLabel: UILabel!
     @IBOutlet var totalSharesLabel: UILabel!
     @IBOutlet var totalMoneyMadeLostLabel: UILabel!
@@ -16,28 +18,11 @@ class AddedStockViewController: UIViewController {
     @IBOutlet var soldForLabel: UILabel!
     @IBOutlet var possibleGraphsLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         
     }
-   
-    
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

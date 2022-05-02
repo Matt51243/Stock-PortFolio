@@ -14,7 +14,6 @@ var stockArray: [StockInfo] = []
 class StockMainPageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var tableView: UITableView!
-    
     @IBOutlet var noTradesLabel: UILabel!
     
     override func viewDidLoad() {
@@ -33,6 +32,7 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
         tableView.reloadData()
     }
     
+    //segue action for when they save the stock it adds it to the tableView
     @IBAction func unwindToStockMainPage(segue: UIStoryboardSegue) {
         guard segue.identifier == "saveUnwind", let sourceViewController = segue.source as? AddNewStockViewController, let stock = sourceViewController.stockInfo else { return }
         let indexPath = IndexPath(row: stockArray.count, section: 0)
@@ -40,13 +40,14 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
         tableView.insertRows(at: [indexPath], with: .automatic)
     }
     
-
+    //when they tap on the cell it performs a segue to AddedStockViewController
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentStock = stockArray[indexPath.row]
         performSegue(withIdentifier: "viewStock", sender: currentStock)
     
     }
     
+    //return the number of rows that the stockArray has
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stockArray.count
     }
@@ -68,7 +69,7 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
         return .delete
     }
     
-    
+    //makes the cell have all the info that they inputted at AddNewStockViewController
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath) as! StockTableViewCell
         let stock = stockArray[indexPath.row]
@@ -93,7 +94,6 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
         return cell
     }
 }
-
 
 //For The Custom Color
 extension UIColor {
