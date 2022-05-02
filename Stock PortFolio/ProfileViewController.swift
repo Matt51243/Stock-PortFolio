@@ -9,6 +9,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    
+    var calculatedProfitArray = [Double]()
     @IBOutlet var todaysProfitLossLabel: UILabel!
     @IBOutlet var totalProfitLabel: UILabel!
     @IBOutlet var totalLossesLabel: UIView!
@@ -36,10 +38,20 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    //Not sure how do this right here
+    //Adds all of the stocks that they added that are profit and changes the label to that
     func calculateTotalProfit() {
-        let filteredPositive = stockArray.filter { stock in
-            return (stock.soldPrice) - (stock.boughtPrice) >= 0.0001
+        stockArray.forEach { stock in
+            if (stock.soldPrice * Double(stock.shares)) - (stock.boughtPrice * Double(stock.shares)) >= 0.001 {
+                let totalSoldPrice = stock.soldPrice * Double(stock.shares)
+                let totalBoughtPrice = stock.boughtPrice * Double(stock.shares)
+                let calculatedProfit = totalSoldPrice - totalBoughtPrice
+
+                calculatedProfitArray.append(calculatedProfit)
+                let totalAddedProfit = calculatedProfitArray.reduce(0, +)
+                totalProfitLabel.text = String("$\(totalAddedProfit)")
+            } else {
+                totalProfitLabel.text = "Something Wrong Happened"
+            }
         }
     }
 }

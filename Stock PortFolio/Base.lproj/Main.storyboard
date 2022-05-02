@@ -330,27 +330,161 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shares:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qT-kq-wqm">
-                                <rect key="frame" x="30" y="69" width="83.5" height="34.5"/>
+                                <rect key="frame" x="35" y="65.5" width="83.5" height="34.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shares Bought at Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DyF-2A-Wh0">
-                                <rect key="frame" x="30" y="115.5" width="171" height="34"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Price Bought " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hB-gc-zhB">
-                                <rect key="frame" x="267" y="115.5" width="117" height="34"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W6O-It-4i6" customClass="AveragePriceSharesBuyView" customModule="Stock_PortFolio" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="110" width="414" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zS4-xq-E7Y">
+                                        <rect key="frame" x="20" y="13.5" width="13" height="21"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsW-Za-sPa">
+                                        <rect key="frame" x="254" y="13.5" width="13" height="21"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Price Bought " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hB-gc-zhB">
+                                        <rect key="frame" x="277" y="7" width="117" height="34"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shares Bought at Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DyF-2A-Wh0">
+                                        <rect key="frame" x="43" y="7" width="171" height="34"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="DyF-2A-Wh0" secondAttribute="bottom" constant="7" id="5Qd-m6-acR"/>
+                                    <constraint firstItem="DyF-2A-Wh0" firstAttribute="leading" secondItem="zS4-xq-E7Y" secondAttribute="trailing" constant="10" id="99p-cO-S6P"/>
+                                    <constraint firstItem="4hB-gc-zhB" firstAttribute="top" secondItem="W6O-It-4i6" secondAttribute="top" constant="7" id="9cn-ln-M5b"/>
+                                    <constraint firstItem="zS4-xq-E7Y" firstAttribute="top" secondItem="W6O-It-4i6" secondAttribute="top" constant="13.5" id="EZK-js-gce"/>
+                                    <constraint firstItem="DyF-2A-Wh0" firstAttribute="top" secondItem="W6O-It-4i6" secondAttribute="top" constant="7" id="JMY-ix-kMt"/>
+                                    <constraint firstItem="HsW-Za-sPa" firstAttribute="top" secondItem="W6O-It-4i6" secondAttribute="top" constant="13.5" id="LXy-c1-Oez"/>
+                                    <constraint firstItem="zS4-xq-E7Y" firstAttribute="leading" secondItem="W6O-It-4i6" secondAttribute="leading" constant="20" id="Ltu-2t-zID"/>
+                                    <constraint firstAttribute="bottom" secondItem="HsW-Za-sPa" secondAttribute="bottom" constant="13.5" id="QOR-LG-GB6"/>
+                                    <constraint firstItem="4hB-gc-zhB" firstAttribute="leading" secondItem="HsW-Za-sPa" secondAttribute="trailing" constant="10" id="Z8z-Tw-ZwA"/>
+                                    <constraint firstAttribute="bottom" secondItem="4hB-gc-zhB" secondAttribute="bottom" constant="7" id="aoG-dH-huS"/>
+                                    <constraint firstAttribute="trailing" secondItem="4hB-gc-zhB" secondAttribute="trailing" constant="20" id="e47-Xe-bze"/>
+                                    <constraint firstAttribute="bottom" secondItem="zS4-xq-E7Y" secondAttribute="bottom" constant="13.5" id="mLF-Fp-cm6"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wec-rk-2ej" customClass="AveragePriceSharesBuyView" customModule="Stock_PortFolio" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="168" width="414" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddg-Dv-UL0">
+                                        <rect key="frame" x="20" y="13.5" width="13" height="21"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvb-yz-bMc">
+                                        <rect key="frame" x="254" y="13.5" width="13" height="21"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Price Bought " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QL1-wv-NAH">
+                                        <rect key="frame" x="277" y="7" width="117" height="34"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shares Bought at Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nLM-Qw-dvc">
+                                        <rect key="frame" x="43" y="7" width="171" height="34"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="nLM-Qw-dvc" firstAttribute="leading" secondItem="ddg-Dv-UL0" secondAttribute="trailing" constant="10" id="0Uv-iH-BPb"/>
+                                    <constraint firstItem="Uvb-yz-bMc" firstAttribute="top" secondItem="wec-rk-2ej" secondAttribute="top" constant="13.5" id="Imv-0i-Z7e"/>
+                                    <constraint firstItem="ddg-Dv-UL0" firstAttribute="leading" secondItem="wec-rk-2ej" secondAttribute="leading" constant="20" id="KV3-R8-Vuf"/>
+                                    <constraint firstItem="ddg-Dv-UL0" firstAttribute="top" secondItem="wec-rk-2ej" secondAttribute="top" constant="13.5" id="T1I-kA-bgs"/>
+                                    <constraint firstAttribute="bottom" secondItem="QL1-wv-NAH" secondAttribute="bottom" constant="7" id="ZGT-og-7Nt"/>
+                                    <constraint firstAttribute="trailing" secondItem="QL1-wv-NAH" secondAttribute="trailing" constant="20" id="alN-kg-PaC"/>
+                                    <constraint firstAttribute="bottom" secondItem="ddg-Dv-UL0" secondAttribute="bottom" constant="13.5" id="fcv-KA-8At"/>
+                                    <constraint firstItem="QL1-wv-NAH" firstAttribute="top" secondItem="wec-rk-2ej" secondAttribute="top" constant="7" id="mB1-HN-LNC"/>
+                                    <constraint firstAttribute="bottom" secondItem="nLM-Qw-dvc" secondAttribute="bottom" constant="7" id="mtj-8g-y05"/>
+                                    <constraint firstItem="nLM-Qw-dvc" firstAttribute="top" secondItem="wec-rk-2ej" secondAttribute="top" constant="7" id="oAn-GT-gEB"/>
+                                    <constraint firstItem="QL1-wv-NAH" firstAttribute="leading" secondItem="Uvb-yz-bMc" secondAttribute="trailing" constant="10" id="wRn-kz-pzx"/>
+                                    <constraint firstAttribute="bottom" secondItem="Uvb-yz-bMc" secondAttribute="bottom" constant="13.5" id="zHB-AV-35n"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOG-4V-lKh">
+                                <rect key="frame" x="20" y="239.5" width="13" height="21"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5v3-sk-Wym">
+                                <rect key="frame" x="254" y="239.5" width="13" height="21"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Price Bought " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="idl-HP-zLC">
+                                <rect key="frame" x="277" y="233" width="117" height="34"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwO-9L-hmw">
-                                <rect key="frame" x="267" y="69" width="112" height="34.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shares Bought at Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vuu-zH-oqm">
+                                <rect key="frame" x="43" y="233" width="171" height="34"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrr-Du-Psf">
+                                <rect key="frame" x="20" y="297.5" width="13" height="21"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mj-TM-AJX">
+                                <rect key="frame" x="254" y="297.5" width="13" height="21"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Price Bought " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qOZ-Gs-U3O">
+                                <rect key="frame" x="277" y="291" width="117" height="34"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shares Bought at Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xJI-fM-fwk">
+                                <rect key="frame" x="43" y="291" width="171" height="34"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sM2-mh-wwe">
+                                <rect key="frame" x="20" y="355.5" width="13" height="21"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiL-MN-tyA">
+                                <rect key="frame" x="254" y="355.5" width="13" height="21"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Price Bought " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqY-q9-6dm">
+                                <rect key="frame" x="277" y="349" width="117" height="34"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shares Bought at Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZLh-hL-jGh">
+                                <rect key="frame" x="43" y="349" width="171" height="34"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfe-Du-v0F">
                                 <rect key="frame" x="10" y="536" width="394" height="0.0"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
@@ -363,37 +497,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Price Bought " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4uF-iZ-uSZ">
-                                <rect key="frame" x="267" y="174.5" width="117" height="34"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shares Bought at Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8VW-Lp-yxu">
-                                <rect key="frame" x="30" y="174.5" width="171" height="34"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zS4-xq-E7Y">
-                                <rect key="frame" x="12" y="104" width="13" height="21"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsW-Za-sPa">
-                                <rect key="frame" x="221" y="104" width="13" height="21"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwM-Sp-d81">
-                                <rect key="frame" x="12" y="162" width="13" height="21"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37l-AV-n1C">
-                                <rect key="frame" x="221" y="160.5" width="13" height="21"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwO-9L-hmw">
+                                <rect key="frame" x="267" y="65.5" width="112" height="34.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -401,50 +507,76 @@
                         <viewLayoutGuide key="safeArea" id="hQH-1t-rMt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8VW-Lp-yxu" firstAttribute="top" secondItem="DyF-2A-Wh0" secondAttribute="bottom" constant="25" id="2jd-Ro-aZ4"/>
-                            <constraint firstItem="4uF-iZ-uSZ" firstAttribute="top" secondItem="4hB-gc-zhB" secondAttribute="bottom" constant="25" id="3Rr-Pt-yqc"/>
+                            <constraint firstItem="Vuu-zH-oqm" firstAttribute="leading" secondItem="fOG-4V-lKh" secondAttribute="trailing" constant="10" id="2fb-sY-KdT"/>
+                            <constraint firstItem="wec-rk-2ej" firstAttribute="trailing" secondItem="hQH-1t-rMt" secondAttribute="trailing" id="4uB-yJ-qqk"/>
                             <constraint firstItem="hQH-1t-rMt" firstAttribute="trailing" secondItem="bH3-hS-HKl" secondAttribute="trailing" constant="45" id="5Jg-ep-8zB"/>
-                            <constraint firstItem="uiA-4f-mEo" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="55" id="7T3-Qx-G6e"/>
-                            <constraint firstItem="HsW-Za-sPa" firstAttribute="top" secondItem="KXk-Q9-0NE" secondAttribute="bottom" constant="58.5" id="8HX-SR-TOh"/>
-                            <constraint firstItem="37l-AV-n1C" firstAttribute="top" secondItem="4hB-gc-zhB" secondAttribute="bottom" constant="11" id="9v3-wj-6zC"/>
+                            <constraint firstItem="sM2-mh-wwe" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="20" id="5Yw-IN-B1C"/>
+                            <constraint firstItem="Vuu-zH-oqm" firstAttribute="top" secondItem="wec-rk-2ej" secondAttribute="bottom" constant="17" id="7jX-S8-Tt0"/>
+                            <constraint firstItem="sM2-mh-wwe" firstAttribute="top" secondItem="vrr-Du-Psf" secondAttribute="bottom" constant="37" id="7sB-47-eq7"/>
+                            <constraint firstItem="hQH-1t-rMt" firstAttribute="trailing" secondItem="qOZ-Gs-U3O" secondAttribute="trailing" constant="20" id="8K6-Q5-T3b"/>
                             <constraint firstItem="sU2-LF-QJr" firstAttribute="leading" secondItem="yeE-nG-gdU" secondAttribute="leading" constant="10" id="AWr-mg-p7O"/>
-                            <constraint firstItem="lwM-Sp-d81" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="12" id="CLZ-qa-KgH"/>
-                            <constraint firstItem="hQH-1t-rMt" firstAttribute="trailing" secondItem="UwO-9L-hmw" secondAttribute="trailing" constant="35" id="GIo-Qn-S6j"/>
-                            <constraint firstItem="lwM-Sp-d81" firstAttribute="top" secondItem="zS4-xq-E7Y" secondAttribute="bottom" constant="37" id="KzK-Kw-hIu"/>
+                            <constraint firstItem="jqY-q9-6dm" firstAttribute="leading" secondItem="ZiL-MN-tyA" secondAttribute="trailing" constant="10" id="CJh-jf-ekm"/>
+                            <constraint firstItem="qOZ-Gs-U3O" firstAttribute="leading" secondItem="8mj-TM-AJX" secondAttribute="trailing" constant="10" id="CQs-BY-gBm"/>
+                            <constraint firstItem="9qT-kq-wqm" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="35" id="Ft8-E2-FKx"/>
+                            <constraint firstItem="uiA-4f-mEo" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="55" id="HRt-9A-ES1"/>
+                            <constraint firstItem="W6O-It-4i6" firstAttribute="leading" secondItem="yeE-nG-gdU" secondAttribute="leading" id="HjG-8m-bGx"/>
+                            <constraint firstItem="hQH-1t-rMt" firstAttribute="trailing" secondItem="idl-HP-zLC" secondAttribute="trailing" constant="20" id="IME-U9-VXp"/>
                             <constraint firstItem="KXk-Q9-0NE" firstAttribute="top" secondItem="hQH-1t-rMt" secondAttribute="top" constant="25" id="MAF-Z4-sxD"/>
+                            <constraint firstItem="vrr-Du-Psf" firstAttribute="top" secondItem="fOG-4V-lKh" secondAttribute="bottom" constant="37" id="Mft-Mf-BEk"/>
+                            <constraint firstItem="idl-HP-zLC" firstAttribute="leading" secondItem="5v3-sk-Wym" secondAttribute="trailing" constant="10" id="N83-OJ-RH8"/>
+                            <constraint firstItem="8mj-TM-AJX" firstAttribute="top" secondItem="5v3-sk-Wym" secondAttribute="bottom" constant="37" id="NIM-us-8ab"/>
                             <constraint firstAttribute="trailing" secondItem="sU2-LF-QJr" secondAttribute="trailing" constant="10" id="NfL-yu-BcG"/>
+                            <constraint firstItem="hQH-1t-rMt" firstAttribute="trailing" secondItem="jqY-q9-6dm" secondAttribute="trailing" constant="20" id="NnN-dj-519"/>
                             <constraint firstItem="KXk-Q9-0NE" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="10" id="Om3-lf-dzI"/>
-                            <constraint firstItem="hQH-1t-rMt" firstAttribute="trailing" secondItem="4hB-gc-zhB" secondAttribute="trailing" constant="30" id="QVN-Ap-uSd"/>
+                            <constraint firstItem="hQH-1t-rMt" firstAttribute="trailing" secondItem="UwO-9L-hmw" secondAttribute="trailing" constant="35" id="P6h-YN-Vn4"/>
+                            <constraint firstItem="wec-rk-2ej" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" id="QfO-56-GVi"/>
                             <constraint firstItem="bH3-hS-HKl" firstAttribute="top" secondItem="uiA-4f-mEo" secondAttribute="bottom" constant="20" id="Qux-1s-SGh"/>
-                            <constraint firstItem="9qT-kq-wqm" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="30" id="T6T-AY-4gG"/>
                             <constraint firstItem="hQH-1t-rMt" firstAttribute="trailing" secondItem="KXk-Q9-0NE" secondAttribute="trailing" constant="10" id="U7t-WT-54L"/>
-                            <constraint firstItem="37l-AV-n1C" firstAttribute="leading" secondItem="8VW-Lp-yxu" secondAttribute="trailing" constant="20" id="WSh-c5-rEx"/>
                             <constraint firstItem="hfe-Du-v0F" firstAttribute="top" secondItem="sU2-LF-QJr" secondAttribute="bottom" constant="20" id="XQF-Fi-YD9"/>
+                            <constraint firstItem="ZLh-hL-jGh" firstAttribute="leading" secondItem="sM2-mh-wwe" secondAttribute="trailing" constant="10" id="Xos-f3-YvP"/>
+                            <constraint firstItem="5v3-sk-Wym" firstAttribute="top" secondItem="wec-rk-2ej" secondAttribute="bottom" constant="23.5" id="Xvq-FW-Ief"/>
                             <constraint firstItem="hfe-Du-v0F" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="10" id="Yb8-Il-hiV"/>
+                            <constraint firstItem="W6O-It-4i6" firstAttribute="top" secondItem="9qT-kq-wqm" secondAttribute="bottom" constant="10" id="ZIO-Lg-zfd"/>
+                            <constraint firstItem="idl-HP-zLC" firstAttribute="top" secondItem="wec-rk-2ej" secondAttribute="bottom" constant="17" id="bBV-us-krQ"/>
                             <constraint firstItem="hQH-1t-rMt" firstAttribute="bottom" secondItem="bH3-hS-HKl" secondAttribute="bottom" constant="40" id="bG8-kY-gPy"/>
-                            <constraint firstItem="DyF-2A-Wh0" firstAttribute="top" secondItem="9qT-kq-wqm" secondAttribute="bottom" constant="12" id="d0K-ze-PY4"/>
-                            <constraint firstItem="zS4-xq-E7Y" firstAttribute="top" secondItem="KXk-Q9-0NE" secondAttribute="bottom" constant="58.5" id="flK-QK-hcS"/>
                             <constraint firstItem="bH3-hS-HKl" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="45" id="fra-3l-laM"/>
-                            <constraint firstItem="8VW-Lp-yxu" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="30" id="iwB-yx-tOF"/>
-                            <constraint firstItem="zS4-xq-E7Y" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="12" id="jAO-t5-mpi"/>
-                            <constraint firstItem="4hB-gc-zhB" firstAttribute="top" secondItem="KXk-Q9-0NE" secondAttribute="bottom" constant="70" id="jGz-P6-mZG"/>
-                            <constraint firstItem="hQH-1t-rMt" firstAttribute="trailing" secondItem="4uF-iZ-uSZ" secondAttribute="trailing" constant="30" id="ldo-Mh-3DB"/>
-                            <constraint firstItem="4hB-gc-zhB" firstAttribute="top" secondItem="UwO-9L-hmw" secondAttribute="bottom" constant="12" id="lgE-87-RnE"/>
-                            <constraint firstItem="HsW-Za-sPa" firstAttribute="leading" secondItem="DyF-2A-Wh0" secondAttribute="trailing" constant="20" id="ovc-gl-x5m"/>
-                            <constraint firstItem="DyF-2A-Wh0" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="30" id="pvi-RC-8gT"/>
-                            <constraint firstItem="DyF-2A-Wh0" firstAttribute="top" secondItem="KXk-Q9-0NE" secondAttribute="bottom" constant="70" id="q7Y-hd-81N"/>
+                            <constraint firstItem="xJI-fM-fwk" firstAttribute="leading" secondItem="vrr-Du-Psf" secondAttribute="trailing" constant="10" id="jGO-q5-pMB"/>
+                            <constraint firstItem="jqY-q9-6dm" firstAttribute="top" secondItem="qOZ-Gs-U3O" secondAttribute="bottom" constant="24" id="kjY-xu-k7Y"/>
+                            <constraint firstItem="fOG-4V-lKh" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="20" id="l2U-Tn-Oc2"/>
+                            <constraint firstItem="ZiL-MN-tyA" firstAttribute="top" secondItem="8mj-TM-AJX" secondAttribute="bottom" constant="37" id="mcH-pl-s2T"/>
+                            <constraint firstItem="wec-rk-2ej" firstAttribute="top" secondItem="W6O-It-4i6" secondAttribute="bottom" constant="10" id="nU9-Vg-PQI"/>
+                            <constraint firstItem="vrr-Du-Psf" firstAttribute="leading" secondItem="hQH-1t-rMt" secondAttribute="leading" constant="20" id="q55-9G-Kd6"/>
+                            <constraint firstItem="xJI-fM-fwk" firstAttribute="top" secondItem="Vuu-zH-oqm" secondAttribute="bottom" constant="24" id="tXV-AB-OaK"/>
                             <constraint firstItem="uiA-4f-mEo" firstAttribute="top" secondItem="hfe-Du-v0F" secondAttribute="bottom" constant="150" id="utg-XK-VMw"/>
+                            <constraint firstItem="9qT-kq-wqm" firstAttribute="top" secondItem="KXk-Q9-0NE" secondAttribute="bottom" constant="20" id="vik-RB-xIC"/>
+                            <constraint firstItem="qOZ-Gs-U3O" firstAttribute="top" secondItem="idl-HP-zLC" secondAttribute="bottom" constant="24" id="wmF-QX-QPc"/>
                             <constraint firstItem="hQH-1t-rMt" firstAttribute="trailing" secondItem="uiA-4f-mEo" secondAttribute="trailing" constant="55" id="yPC-an-k37"/>
+                            <constraint firstItem="UwO-9L-hmw" firstAttribute="top" secondItem="KXk-Q9-0NE" secondAttribute="bottom" constant="20" id="yZv-CY-jWu"/>
+                            <constraint firstItem="fOG-4V-lKh" firstAttribute="top" secondItem="wec-rk-2ej" secondAttribute="bottom" constant="23.5" id="yjd-C1-av4"/>
                             <constraint firstItem="hQH-1t-rMt" firstAttribute="trailing" secondItem="hfe-Du-v0F" secondAttribute="trailing" constant="10" id="ymj-ud-xAB"/>
+                            <constraint firstItem="ZLh-hL-jGh" firstAttribute="top" secondItem="xJI-fM-fwk" secondAttribute="bottom" constant="24" id="zTc-YZ-Zj7"/>
+                            <constraint firstItem="hQH-1t-rMt" firstAttribute="trailing" secondItem="W6O-It-4i6" secondAttribute="trailing" id="zUE-7s-Gas"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="buyPriceLabel" destination="UwO-9L-hmw" id="OAi-rW-pGi"/>
                         <outlet property="buyPriceTextField" destination="4hB-gc-zhB" id="w0b-to-tOr"/>
-                        <outlet property="priceBought2" destination="4uF-iZ-uSZ" id="s9X-Tr-Q1x"/>
+                        <outlet property="priceBought2" destination="QL1-wv-NAH" id="AKO-Nx-LYc"/>
+                        <outlet property="priceBought3" destination="idl-HP-zLC" id="bow-xZ-re7"/>
+                        <outlet property="priceBought4" destination="qOZ-Gs-U3O" id="ZJe-vj-TlB"/>
+                        <outlet property="priceBought5" destination="jqY-q9-6dm" id="bmu-qF-vk2"/>
+                        <outlet property="priceBoughtLabel3" destination="5v3-sk-Wym" id="gyN-gO-Oji"/>
+                        <outlet property="priceBoughtLabel4" destination="8mj-TM-AJX" id="LC4-vd-7Un"/>
+                        <outlet property="priceBoughtLabel5" destination="ZiL-MN-tyA" id="RQo-4i-tRn"/>
                         <outlet property="sharesLabel" destination="9qT-kq-wqm" id="kdh-ui-bnV"/>
+                        <outlet property="sharesLabel3" destination="fOG-4V-lKh" id="yT9-zC-h8N"/>
+                        <outlet property="sharesLabel4" destination="vrr-Du-Psf" id="PWF-gM-PtL"/>
+                        <outlet property="sharesLabel5" destination="sM2-mh-wwe" id="GgN-nr-Mr4"/>
                         <outlet property="sharesTextField" destination="DyF-2A-Wh0" id="P1e-cK-w2k"/>
-                        <outlet property="sharesTextfield2" destination="8VW-Lp-yxu" id="V2W-gv-mlh"/>
+                        <outlet property="sharesTextField3" destination="Vuu-zH-oqm" id="Hze-K4-iCq"/>
+                        <outlet property="sharesTextField4" destination="xJI-fM-fwk" id="FzN-hw-u4i"/>
+                        <outlet property="sharesTextField5" destination="ZLh-hL-jGh" id="RVb-mk-vXU"/>
+                        <outlet property="sharesTextfield2" destination="nLM-Qw-dvc" id="wUN-vP-MTb"/>
                         <outlet property="showResultsLabel" destination="hfe-Du-v0F" id="Glp-E5-oR1"/>
                         <outlet property="showTotalSharesLabel" destination="sU2-LF-QJr" id="9Ez-eT-NhE"/>
                     </connections>
