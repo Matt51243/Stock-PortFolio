@@ -43,7 +43,7 @@ class ProfileViewController: UIViewController {
         if stockArray.count == 0 {
             totalTradesMadeLabel.text = "NA"
         } else if stockArray.count >= 1 {
-            totalTradesMadeLabel.text = String(stockArray.count)
+            totalTradesMadeLabel.text = String(stockArray.count.withIntCommas())
         }
     }
     
@@ -57,7 +57,7 @@ class ProfileViewController: UIViewController {
 
                 calculatedProfitArray.append(calculatedProfit)
                 let totalAddedProfit = calculatedProfitArray.reduce(0, +)
-                totalProfitLabel.text = String("$\(totalAddedProfit)")
+                totalProfitLabel.text = String("\(totalAddedProfit.withCommas())")
             }
         }
     }
@@ -73,7 +73,7 @@ class ProfileViewController: UIViewController {
                 calculatedLossArray.append(calculatedLoss)
                 let totalAddedLosses = calculatedLossArray.reduce(0, +)
                 let absoulteValueLosses = abs(totalAddedLosses)
-                totalLossesLabel.text = String("- $\(absoulteValueLosses)")
+                totalLossesLabel.text = String("- \(absoulteValueLosses.withCommas())")
             }
         }
     }
@@ -84,7 +84,7 @@ class ProfileViewController: UIViewController {
         if calculatedProfitArray.count == 0 {
             biggestProfitLabel.text = "NA"
         } else if calculatedProfitArray.count >= 1 {
-            biggestProfitLabel.text = String("$\(largestProfit!)")
+            biggestProfitLabel.text = String("\(largestProfit!.withCommas())")
         }
     }
     
@@ -95,15 +95,15 @@ class ProfileViewController: UIViewController {
             biggestLossLabel.text = "NA"
         } else if calculatedLossArray.count >= 1 {
             let absoluteValueLosses = abs(largestLoss!)
-            biggestLossLabel.text = String("- $\(absoluteValueLosses)")
+            biggestLossLabel.text = String("- \(absoluteValueLosses.withCommas())")
         }
     }
     
     //calculates the net worth of the person account
     func calculateNetWorth() {
         let networth = calculatedProfitArray.reduce(0, +) + calculatedLossArray.reduce(0, +)
-        netWorthLabel.text = (networth >= 0 ? "" : "-") + " $" + String(abs(networth))
-        
+        netWorthLabel.text = (networth >= 0 ? "" : "-") + "" + (abs(networth).withCommas())
+
         if networth > 0.00 {
             netWorthLabel.textColor = customGreenColor
         } else if networth < 0.00 {
@@ -111,5 +111,23 @@ class ProfileViewController: UIViewController {
         } else {
             netWorthLabel.textColor = .black
         }
+    }
+}
+
+//adds commas to doubles
+extension Double {
+    func withCommas() -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.locale = Locale.current
+        numberFormatter.numberStyle = .currency
+        return numberFormatter.string(from: NSNumber(value: self))!
+    }
+}
+//adds commas to Ints
+extension Int {
+    func withIntCommas() -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        return numberFormatter.string(from: NSNumber(value: self))!
     }
 }

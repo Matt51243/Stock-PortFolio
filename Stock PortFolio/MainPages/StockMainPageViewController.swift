@@ -33,19 +33,22 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
         tableView.reloadData()
     }
     
+    //when they tap on the cell it performs a segue to AddedStockViewController
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentStock = stockArray[indexPath.row]
+        performSegue(withIdentifier: "viewStock", sender: currentStock)
+    }
+    @IBSegueAction func goToStockInfo(_ coder: NSCoder, sender: Any?) -> AddedStockViewController? {
+        let stock = sender as! StockInfo
+        return AddedStockViewController(tickerSymbol: stock.tickerSymbol, shares: String(stock.shares), boughtPrice: stock.boughtPrice, soldPrice: stock.soldPrice, profitLoss: (stock.soldPrice * Double(stock.shares)) - (stock.boughtPrice * Double(stock.shares)), coder: coder)
+    }
+    
     //segue action for when they save the stock it adds it to the tableView
     @IBAction func unwindToStockMainPage(segue: UIStoryboardSegue) {
         guard segue.identifier == "saveUnwind", let sourceViewController = segue.source as? AddNewStockViewController, let stock = sourceViewController.stockInfo else { return }
         let indexPath = IndexPath(row: stockArray.count, section: 0)
         stockArray.append(stock)
         tableView.insertRows(at: [indexPath], with: .automatic)
-    }
-    
-    //when they tap on the cell it performs a segue to AddedStockViewController
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let currentStock = stockArray[indexPath.row]
-        performSegue(withIdentifier: "viewStock", sender: currentStock)
-    
     }
     
     //return the number of rows that the stockArray has
@@ -79,18 +82,18 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
         let calculatedProfitLoss = calculatedSold - calculatedBought
         let absoluteProfitLoss = abs(calculatedProfitLoss)
         cell.tickerSymbol.text = stock.tickerSymbol
-        cell.totalShares.text = String("\(stock.shares) shares")
-        cell.profitLossLabel.text = String(calculatedProfitLoss)
+        cell.totalShares.text = String("\(stock.shares.withIntCommas()) shares")
+        cell.profitLossLabel.text = String(calculatedProfitLoss.withCommas())
         
         if calculatedProfitLoss > 0.01 {
             cell.profitLossLabel.textColor = customGreenColor
-            cell.profitLossLabel.text = String("+ $\(absoluteProfitLoss)")
+            cell.profitLossLabel.text = String("+ \(absoluteProfitLoss.withCommas())")
         } else if calculatedProfitLoss == 0.0000 {
             cell.profitLossLabel.text = "Broke Even!"
             cell.profitLossLabel.textColor = .black
         } else {
             cell.profitLossLabel.textColor = .red
-            cell.profitLossLabel.text = String("- $\(absoluteProfitLoss)")
+            cell.profitLossLabel.text = String("- \(absoluteProfitLoss.withCommas())")
         }
         return cell
     }

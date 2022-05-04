@@ -234,7 +234,7 @@
                                             <outlet property="profitLossLabel" destination="m6e-v7-auN" id="cEv-6V-dze"/>
                                             <outlet property="tickerSymbol" destination="gm7-MB-FUz" id="MDA-qr-I5c"/>
                                             <outlet property="totalShares" destination="nxJ-yD-y2k" id="7Dy-f8-Fhq"/>
-                                            <segue destination="ST6-VV-8N8" kind="showDetail" identifier="viewStock" trigger="accessoryAction" id="Rne-xB-7fQ"/>
+                                            <segue destination="ST6-VV-8N8" kind="showDetail" identifier="viewStock" trigger="accessoryAction" destinationCreationSelector="goToStockInfo:sender:" id="Rne-xB-7fQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
