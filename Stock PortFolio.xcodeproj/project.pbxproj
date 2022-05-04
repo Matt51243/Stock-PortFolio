@@ -12,7 +12,6 @@
 		C96D5CF3280EFA5E00F629B7 /* StockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96D5CF2280EFA5E00F629B7 /* StockTableViewCell.swift */; };
 		C96D5CF5280EFBFF00F629B7 /* StockMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96D5CF4280EFBFF00F629B7 /* StockMainPageViewController.swift */; };
 		C96D5CF828183E2400F629B7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96D5CF728183E2400F629B7 /* ProfileViewController.swift */; };
-		C96D5D43281ADBC800F629B7 /* StoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96D5D42281ADBC800F629B7 /* StoreItem.swift */; };
 		C9C2B0642802229800BE11F7 /* AverageStockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C2B0632802229800BE11F7 /* AverageStockPriceViewController.swift */; };
 		C9CAE7DC2800E3AC006E9F55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAE7DB2800E3AC006E9F55 /* AppDelegate.swift */; };
 		C9CAE7DE2800E3AC006E9F55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAE7DD2800E3AC006E9F55 /* SceneDelegate.swift */; };
@@ -29,7 +28,6 @@
 		C96D5CF2280EFA5E00F629B7 /* StockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewCell.swift; sourceTree = "<group>"; };
 		C96D5CF4280EFBFF00F629B7 /* StockMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockMainPageViewController.swift; sourceTree = "<group>"; };
 		C96D5CF728183E2400F629B7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		C96D5D42281ADBC800F629B7 /* StoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItem.swift; sourceTree = "<group>"; };
 		C9C2B0632802229800BE11F7 /* AverageStockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageStockPriceViewController.swift; sourceTree = "<group>"; };
 		C9CAE7D82800E3AC006E9F55 /* Stock PortFolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stock PortFolio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CAE7DB2800E3AC006E9F55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,9 +66,17 @@
 				C96D5CF4280EFBFF00F629B7 /* StockMainPageViewController.swift */,
 				C9CAE7EF2800F071006E9F55 /* AddNewStockViewController.swift */,
 				C96D5CDE28087FFC00F629B7 /* AddedStockViewController.swift */,
-				C96D5CF2280EFA5E00F629B7 /* StockTableViewCell.swift */,
+				C96D5CF728183E2400F629B7 /* ProfileViewController.swift */,
 			);
 			path = MainPages;
+			sourceTree = "<group>";
+		};
+		C96D5D4A2822C76900F629B7 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				C96D5CF2280EFA5E00F629B7 /* StockTableViewCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		C9CAE7CF2800E3AC006E9F55 = {
@@ -93,16 +99,15 @@
 			isa = PBXGroup;
 			children = (
 				C9CAE7E12800E3AC006E9F55 /* Main.storyboard */,
-				C96D5CF728183E2400F629B7 /* ProfileViewController.swift */,
-				C9CAE7DB2800E3AC006E9F55 /* AppDelegate.swift */,
 				C96D5CE82809C76300F629B7 /* StockInfo.swift */,
-				C9CAE7DD2800E3AC006E9F55 /* SceneDelegate.swift */,
+				C96D5D4A2822C76900F629B7 /* TableViewCells */,
 				C96D5CF6280EFC4500F629B7 /* MainPages */,
 				C96D5CD928087B4400F629B7 /* Calculators */,
+				C9CAE7DB2800E3AC006E9F55 /* AppDelegate.swift */,
+				C9CAE7DD2800E3AC006E9F55 /* SceneDelegate.swift */,
 				C9CAE7E42800E3AD006E9F55 /* Assets.xcassets */,
 				C9CAE7E62800E3AD006E9F55 /* LaunchScreen.storyboard */,
 				C9CAE7E92800E3AD006E9F55 /* Info.plist */,
-				C96D5D42281ADBC800F629B7 /* StoreItem.swift */,
 			);
 			path = "Stock PortFolio";
 			sourceTree = "<group>";
@@ -183,7 +188,6 @@
 				C96D5CF828183E2400F629B7 /* ProfileViewController.swift in Sources */,
 				C9CAE7DC2800E3AC006E9F55 /* AppDelegate.swift in Sources */,
 				C9C2B0642802229800BE11F7 /* AverageStockPriceViewController.swift in Sources */,
-				C96D5D43281ADBC800F629B7 /* StoreItem.swift in Sources */,
 				C96D5CF3280EFA5E00F629B7 /* StockTableViewCell.swift in Sources */,
 				C96D5CE92809C76300F629B7 /* StockInfo.swift in Sources */,
 				C9CAE7F22800F770006E9F55 /* ProfitLossCalculatorViewController.swift in Sources */,

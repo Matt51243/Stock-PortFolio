@@ -12,7 +12,10 @@ class ProfileViewController: UIViewController {
     var calculatedProfitArray = [Double]()
     var calculatedLossArray = [Double]()
     
-    @IBOutlet var todaysProfitLossLabel: UILabel!
+    var todaysDate = Date()
+    let calendar = Calendar.current
+    
+    @IBOutlet var netWorthLabel: UILabel!
     @IBOutlet var totalProfitLabel: UILabel!
     @IBOutlet var totalLossesLabel: UILabel!
     
@@ -32,6 +35,7 @@ class ProfileViewController: UIViewController {
         calculateTotalLosses()
         biggestProfit()
         biggestLoss()
+        calculateNetWorth()
     }
     
     //sets the totalTradesMadeLabel to the amount of trades that they have
@@ -93,5 +97,11 @@ class ProfileViewController: UIViewController {
             let absoluteValueLosses = abs(largestLoss!)
             biggestLossLabel.text = String("- $\(absoluteValueLosses)")
         }
+    }
+    
+    //calculates the net worth of the person account
+    func calculateNetWorth() {
+        let networth = calculatedProfitArray.reduce(0, +) + calculatedLossArray.reduce(0, +)
+        netWorthLabel.text = (networth >= 0 ? "" : "-") + " $" + String(abs(networth))
     }
 }
