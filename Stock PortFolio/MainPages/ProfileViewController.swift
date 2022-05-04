@@ -103,5 +103,13 @@ class ProfileViewController: UIViewController {
     func calculateNetWorth() {
         let networth = calculatedProfitArray.reduce(0, +) + calculatedLossArray.reduce(0, +)
         netWorthLabel.text = (networth >= 0 ? "" : "-") + " $" + String(abs(networth))
+        
+        if networth > 0.00 {
+            netWorthLabel.textColor = customGreenColor
+        } else if networth < 0.00 {
+            netWorthLabel.textColor = customRedColor
+        } else {
+            netWorthLabel.textColor = .black
+        }
     }
 }

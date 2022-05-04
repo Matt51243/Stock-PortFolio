@@ -8,6 +8,7 @@
 import UIKit
 
 let customGreenColor = UIColor(rgb: 0x55B400)
+let customRedColor = UIColor(rgb: 0xDD1E1C)
 
 var stockArray: [StockInfo] = []
 
