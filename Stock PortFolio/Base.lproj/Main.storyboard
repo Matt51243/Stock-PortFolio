@@ -930,7 +930,7 @@
                                 <rect key="frame" x="10" y="227" width="394" height="581"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="68" id="B94-7S-Lbg" customClass="OtherTradesTableViewCell" customModule="Stock_PortFolio" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OtherTradesCell" rowHeight="68" id="B94-7S-Lbg" customClass="OtherTradesTableViewCell" customModule="Stock_PortFolio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="394" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B94-7S-Lbg" id="QX3-ah-avA">

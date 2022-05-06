@@ -11,7 +11,6 @@ class StockTableViewCell: UITableViewCell {
 
     @IBOutlet var tickerSymbol: UILabel!
     @IBOutlet var totalShares: UILabel!
-    @IBOutlet var upOrDownImage: UIImageView!
     @IBOutlet var profitLossLabel: UILabel!
     
     override func awakeFromNib() {

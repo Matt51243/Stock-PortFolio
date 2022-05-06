@@ -19,4 +19,9 @@ class OtherTradesTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    func updateOtherTrades(with stock: StockInfo) {
+        OtherTradesSharesLabel.text = String(stock.shares)
+        OtherTradesTotalProfitLossLabel.text = String((stock.soldPrice) * Double(stock.shares) - (stock.boughtPrice * Double(stock.shares)))
+    }
 }
