@@ -20,10 +20,14 @@ class AddedStockViewController: UIViewController {
     @IBOutlet var totalMoneyMadeLostLabel: UILabel!
     @IBOutlet var boughtForLabel: UILabel!
     @IBOutlet var soldForLabel: UILabel!
-    @IBOutlet var possibleGraphsLabel: UILabel!
+    
+    @IBOutlet var NoOtherTradesLabel: UILabel!
+    
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +41,14 @@ class AddedStockViewController: UIViewController {
             totalMoneyMadeLostLabel.text = String("Total Loss: \(profitLoss.withCommas())")
         } else {
             totalMoneyMadeLostLabel.text = "You Broke Even!"
+        }
+        
+        let filteredStockArray = stockArray.filter { $0.tickerSymbol == tickerSymbolLabel.text }
+        if filteredStockArray.count == 0 {
+        } else if filteredStockArray.count >= 1 {
+            
+//            NoOtherTradesLabel.isHidden = true
+            print(filteredStockArray.count)
         }
     }
     

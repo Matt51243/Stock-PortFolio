@@ -13,6 +13,7 @@
 		C96D5CF5280EFBFF00F629B7 /* StockMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96D5CF4280EFBFF00F629B7 /* StockMainPageViewController.swift */; };
 		C96D5CF828183E2400F629B7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96D5CF728183E2400F629B7 /* ProfileViewController.swift */; };
 		C9C2B0642802229800BE11F7 /* AverageStockPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C2B0632802229800BE11F7 /* AverageStockPriceViewController.swift */; };
+		C9C3C98C282578390049973C /* OtherTradesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3C98B282578390049973C /* OtherTradesTableViewCell.swift */; };
 		C9CAE7DC2800E3AC006E9F55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAE7DB2800E3AC006E9F55 /* AppDelegate.swift */; };
 		C9CAE7DE2800E3AC006E9F55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAE7DD2800E3AC006E9F55 /* SceneDelegate.swift */; };
 		C9CAE7E32800E3AC006E9F55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CAE7E12800E3AC006E9F55 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		C96D5CF4280EFBFF00F629B7 /* StockMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockMainPageViewController.swift; sourceTree = "<group>"; };
 		C96D5CF728183E2400F629B7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C9C2B0632802229800BE11F7 /* AverageStockPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageStockPriceViewController.swift; sourceTree = "<group>"; };
+		C9C3C98B282578390049973C /* OtherTradesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTradesTableViewCell.swift; sourceTree = "<group>"; };
 		C9CAE7D82800E3AC006E9F55 /* Stock PortFolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stock PortFolio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CAE7DB2800E3AC006E9F55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9CAE7DD2800E3AC006E9F55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +67,6 @@
 			children = (
 				C96D5CF4280EFBFF00F629B7 /* StockMainPageViewController.swift */,
 				C9CAE7EF2800F071006E9F55 /* AddNewStockViewController.swift */,
-				C96D5CDE28087FFC00F629B7 /* AddedStockViewController.swift */,
 				C96D5CF728183E2400F629B7 /* ProfileViewController.swift */,
 			);
 			path = MainPages;
@@ -74,9 +75,18 @@
 		C96D5D4A2822C76900F629B7 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				C9C3C98B282578390049973C /* OtherTradesTableViewCell.swift */,
 				C96D5CF2280EFA5E00F629B7 /* StockTableViewCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		C9C3C98A282571EB0049973C /* AddedStock */ = {
+			isa = PBXGroup;
+			children = (
+				C96D5CDE28087FFC00F629B7 /* AddedStockViewController.swift */,
+			);
+			path = AddedStock;
 			sourceTree = "<group>";
 		};
 		C9CAE7CF2800E3AC006E9F55 = {
@@ -100,6 +110,7 @@
 			children = (
 				C9CAE7E12800E3AC006E9F55 /* Main.storyboard */,
 				C96D5CE82809C76300F629B7 /* StockInfo.swift */,
+				C9C3C98A282571EB0049973C /* AddedStock */,
 				C96D5D4A2822C76900F629B7 /* TableViewCells */,
 				C96D5CF6280EFC4500F629B7 /* MainPages */,
 				C96D5CD928087B4400F629B7 /* Calculators */,
@@ -188,6 +199,7 @@
 				C96D5CF828183E2400F629B7 /* ProfileViewController.swift in Sources */,
 				C9CAE7DC2800E3AC006E9F55 /* AppDelegate.swift in Sources */,
 				C9C2B0642802229800BE11F7 /* AverageStockPriceViewController.swift in Sources */,
+				C9C3C98C282578390049973C /* OtherTradesTableViewCell.swift in Sources */,
 				C96D5CF3280EFA5E00F629B7 /* StockTableViewCell.swift in Sources */,
 				C96D5CE92809C76300F629B7 /* StockInfo.swift in Sources */,
 				C9CAE7F22800F770006E9F55 /* ProfitLossCalculatorViewController.swift in Sources */,
@@ -269,7 +281,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -324,7 +336,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -341,8 +353,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Stock PortFolio/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = PortFolio;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -370,8 +384,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Stock PortFolio/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = PortFolio;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

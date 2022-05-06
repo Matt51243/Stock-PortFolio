@@ -891,38 +891,82 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CEI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHd-oU-gee">
-                                <rect key="frame" x="35" y="45" width="79" height="69"/>
+                                <rect key="frame" x="20" y="45" width="79" height="69"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sold For: $2.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2b-kl-kqA">
-                                <rect key="frame" x="309" y="98" width="70" height="14"/>
+                                <rect key="frame" x="324" y="103.5" width="70" height="14"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000 Shares" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bg4-0M-SDQ">
-                                <rect key="frame" x="35" y="110" width="82" height="21"/>
+                                <rect key="frame" x="20" y="110" width="82" height="21"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Profit: $100000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICU-S3-rQe">
-                                <rect key="frame" x="191" y="60" width="188" height="28"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <rect key="frame" x="234" y="70" width="160" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Possible Graphs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVQ-Xd-Uu8">
-                                <rect key="frame" x="35" y="201" width="110" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Trades" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVQ-Xd-Uu8">
+                                <rect key="frame" x="35" y="191" width="89" height="21"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bought For: $1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aX-T7-8HR">
-                                <rect key="frame" x="191" y="98" width="83" height="14"/>
+                                <rect key="frame" x="234" y="103.5" width="83" height="14"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h24-5y-n0L">
+                                <rect key="frame" x="10" y="227" width="394" height="581"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="68" id="B94-7S-Lbg" customClass="OtherTradesTableViewCell" customModule="Stock_PortFolio" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="394" height="68"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B94-7S-Lbg" id="QX3-ah-avA">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="68"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000 Shares" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95q-Qc-QtV">
+                                                    <rect key="frame" x="30" y="22" width="92" height="24"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Profit: $13412" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ozg-Tn-jzn">
+                                                    <rect key="frame" x="214" y="22" width="150" height="24"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Ozg-Tn-jzn" secondAttribute="trailing" constant="10" id="Dok-w9-icF"/>
+                                                <constraint firstItem="95q-Qc-QtV" firstAttribute="top" secondItem="QX3-ah-avA" secondAttribute="topMargin" constant="11" id="YfS-B5-RJW"/>
+                                                <constraint firstItem="Ozg-Tn-jzn" firstAttribute="top" secondItem="QX3-ah-avA" secondAttribute="topMargin" constant="11" id="d2B-cd-uqL"/>
+                                                <constraint firstItem="95q-Qc-QtV" firstAttribute="leading" secondItem="QX3-ah-avA" secondAttribute="leadingMargin" constant="10" id="wMY-5E-vr3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="OtherTradesSharesLabel" destination="95q-Qc-QtV" id="cCT-9x-o4H"/>
+                                            <outlet property="OtherTradesTotalProfitLossLabel" destination="Ozg-Tn-jzn" id="XIF-cw-iSj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Other Trades With This Ticker Yet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfT-hK-gGr">
+                                <rect key="frame" x="30" y="326" width="354" height="82"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -930,24 +974,32 @@
                         <viewLayoutGuide key="safeArea" id="jL8-De-2oA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="jL8-De-2oA" firstAttribute="trailing" secondItem="ICU-S3-rQe" secondAttribute="trailing" constant="20" id="26F-Oa-gdX"/>
+                            <constraint firstItem="jL8-De-2oA" firstAttribute="bottom" secondItem="zfT-hK-gGr" secondAttribute="bottom" constant="400" id="C7t-cQ-gg6"/>
                             <constraint firstItem="Z2b-kl-kqA" firstAttribute="top" secondItem="ICU-S3-rQe" secondAttribute="bottom" constant="10" id="D7R-7Z-WHn"/>
                             <constraint firstItem="bg4-0M-SDQ" firstAttribute="top" secondItem="jL8-De-2oA" secondAttribute="top" constant="110" id="DHi-Dq-Nsd"/>
+                            <constraint firstItem="h24-5y-n0L" firstAttribute="top" secondItem="mVQ-Xd-Uu8" secondAttribute="bottom" constant="15" id="EN2-x5-p3V"/>
+                            <constraint firstItem="ICU-S3-rQe" firstAttribute="top" secondItem="jL8-De-2oA" secondAttribute="top" constant="70" id="F7w-kG-7ci"/>
                             <constraint firstItem="0aX-T7-8HR" firstAttribute="top" secondItem="ICU-S3-rQe" secondAttribute="bottom" constant="10" id="KsP-7s-nly"/>
-                            <constraint firstItem="mVQ-Xd-Uu8" firstAttribute="top" secondItem="bg4-0M-SDQ" secondAttribute="bottom" constant="70" id="LeX-gc-TI2"/>
-                            <constraint firstItem="Z2b-kl-kqA" firstAttribute="leading" secondItem="0aX-T7-8HR" secondAttribute="trailing" constant="35" id="Pfh-jv-Ibt"/>
-                            <constraint firstItem="jL8-De-2oA" firstAttribute="trailing" secondItem="Z2b-kl-kqA" secondAttribute="trailing" constant="35" id="ZvC-yQ-Rn4"/>
-                            <constraint firstItem="jL8-De-2oA" firstAttribute="trailing" secondItem="ICU-S3-rQe" secondAttribute="trailing" constant="35" id="aCB-up-SUm"/>
-                            <constraint firstItem="hHd-oU-gee" firstAttribute="leading" secondItem="jL8-De-2oA" secondAttribute="leading" constant="35" id="aMu-JC-t3w"/>
-                            <constraint firstItem="ICU-S3-rQe" firstAttribute="top" secondItem="jL8-De-2oA" secondAttribute="top" constant="60" id="kFm-n5-YRo"/>
-                            <constraint firstItem="bg4-0M-SDQ" firstAttribute="leading" secondItem="jL8-De-2oA" secondAttribute="leading" constant="35" id="kTe-lN-zPw"/>
+                            <constraint firstItem="h24-5y-n0L" firstAttribute="leading" secondItem="jL8-De-2oA" secondAttribute="leading" constant="10" id="NNs-im-g6U"/>
+                            <constraint firstItem="jL8-De-2oA" firstAttribute="trailing" secondItem="h24-5y-n0L" secondAttribute="trailing" constant="10" id="U9A-ig-0C7"/>
+                            <constraint firstItem="jL8-De-2oA" firstAttribute="bottom" secondItem="h24-5y-n0L" secondAttribute="bottom" id="VRJ-tu-y9r"/>
+                            <constraint firstItem="jL8-De-2oA" firstAttribute="trailing" secondItem="zfT-hK-gGr" secondAttribute="trailing" constant="30" id="eVR-di-Wt2"/>
+                            <constraint firstItem="mVQ-Xd-Uu8" firstAttribute="top" secondItem="bg4-0M-SDQ" secondAttribute="bottom" constant="60" id="ftd-Rn-8So"/>
+                            <constraint firstItem="jL8-De-2oA" firstAttribute="trailing" secondItem="Z2b-kl-kqA" secondAttribute="trailing" constant="20" id="ggB-6P-F9M"/>
+                            <constraint firstItem="bg4-0M-SDQ" firstAttribute="leading" secondItem="jL8-De-2oA" secondAttribute="leading" constant="20" id="hog-sq-QXo"/>
                             <constraint firstItem="mVQ-Xd-Uu8" firstAttribute="leading" secondItem="jL8-De-2oA" secondAttribute="leading" constant="35" id="qLK-Ii-zgH"/>
                             <constraint firstItem="hHd-oU-gee" firstAttribute="top" secondItem="jL8-De-2oA" secondAttribute="top" constant="45" id="sB1-3j-1gx"/>
+                            <constraint firstItem="hHd-oU-gee" firstAttribute="leading" secondItem="jL8-De-2oA" secondAttribute="leading" constant="20" id="tzX-wn-T0l"/>
+                            <constraint firstItem="zfT-hK-gGr" firstAttribute="leading" secondItem="jL8-De-2oA" secondAttribute="leading" constant="30" id="w9h-zc-ZBs"/>
+                            <constraint firstItem="Z2b-kl-kqA" firstAttribute="leading" secondItem="0aX-T7-8HR" secondAttribute="trailing" constant="7" id="y5d-Ex-3oe"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="NoOtherTradesLabel" destination="zfT-hK-gGr" id="zCs-Uk-GOI"/>
                         <outlet property="boughtForLabel" destination="0aX-T7-8HR" id="Aty-K3-Oo9"/>
-                        <outlet property="possibleGraphsLabel" destination="mVQ-Xd-Uu8" id="lWT-JY-nZ8"/>
                         <outlet property="soldForLabel" destination="Z2b-kl-kqA" id="deM-kH-5fW"/>
+                        <outlet property="tableView" destination="h24-5y-n0L" id="8Mm-K0-BAq"/>
                         <outlet property="tickerSymbolLabel" destination="hHd-oU-gee" id="E3Q-V1-EpH"/>
                         <outlet property="totalMoneyMadeLostLabel" destination="ICU-S3-rQe" id="ix1-F0-WJ3"/>
                         <outlet property="totalSharesLabel" destination="bg4-0M-SDQ" id="Mdi-PF-0fS"/>
@@ -955,7 +1007,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpV-Jh-8ht" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1643" y="-568"/>
+            <point key="canvasLocation" x="1642.0289855072465" y="-568.52678571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="to1-9K-ttS">
