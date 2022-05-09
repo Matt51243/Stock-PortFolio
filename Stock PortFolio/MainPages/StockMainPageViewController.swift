@@ -24,6 +24,8 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        overrideUserInterfaceStyle = .light
+
         super.viewWillAppear(animated)
         if stockArray.count >= 1 {
             noTradesLabel.isHidden = true

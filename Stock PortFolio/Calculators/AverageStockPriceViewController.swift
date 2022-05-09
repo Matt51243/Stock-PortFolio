@@ -44,6 +44,10 @@ class AverageStockPriceViewController: UIViewController {
         hideOption4()
         hideOption5()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        overrideUserInterfaceStyle = .light
+    }
 
     
     //hides and shows option3

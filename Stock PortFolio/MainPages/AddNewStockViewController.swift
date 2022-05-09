@@ -54,6 +54,10 @@ class AddNewStockViewController: UIViewController {
         SaveButton.isEnabled = false
         [tickerSymbol, boughtPrice, soldPrice, totalShares].forEach({ $0?.addTarget(self, action: #selector(editingChanged), for: .editingChanged)})
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        overrideUserInterfaceStyle = .light
+    }
 
     
     //Disables the Save Button if textfield are empty

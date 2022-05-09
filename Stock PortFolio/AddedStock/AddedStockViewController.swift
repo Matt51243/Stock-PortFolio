@@ -34,6 +34,8 @@ class AddedStockViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        overrideUserInterfaceStyle = .light
+        
         tickerSymbolLabel.text = tickerSymbol
         totalSharesLabel.text = ("\(shares) Shares")
         boughtForLabel.text = String("Bought For: \(boughtPrice.withCommas())")
@@ -46,18 +48,18 @@ class AddedStockViewController: UIViewController {
         } else {
             totalMoneyMadeLostLabel.text = "You Broke Even!"
         }
+        let tickerSymbolToUse = tickerSymbolLabel.text
         
-        
-        let filteredStockArray = stockArray.filter { $0.tickerSymbol == tickerSymbolLabel.text }
+        let filteredStockArray = stockArray.filter { $0.tickerSymbol == tickerSymbolToUse }
         if filteredStockArray.count == 0 {
-        } else if filteredStockArray.count >= 1 {
             
-//            NoOtherTradesLabel.isHidden = true
+        } else if filteredStockArray.count >= 1 {
+            NoOtherTradesLabel.isHidden = true
             print(filteredStockArray.count)
         }
     }
+      
     
-
     
     init?(tickerSymbol: String, shares: String, boughtPrice: Double, soldPrice: Double, profitLoss: Double, coder: NSCoder) {
         self.tickerSymbol = tickerSymbol
@@ -67,17 +69,14 @@ class AddedStockViewController: UIViewController {
         self.profitLoss = profitLoss
         super.init(coder: coder)   
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
-
 extension AddedStockViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
-        //have to return the filteredArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

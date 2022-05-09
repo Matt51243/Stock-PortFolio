@@ -25,6 +25,10 @@ class ProfitLossCalculatorViewController: UIViewController {
         [buyPrice, sellPrice, shares].forEach({ $0?.addTarget(self, action: #selector(editingChanged), for: .editingChanged)})
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        overrideUserInterfaceStyle = .light
+    }
+    
     //Disabled the calculate button if textfields are empty
     @objc func editingChanged(_ textField: UITextField) {
         if buyPrice.hasText && sellPrice.hasText && shares.hasText {

@@ -14,6 +14,7 @@ class OtherTradesTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        overrideUserInterfaceStyle = .light
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
