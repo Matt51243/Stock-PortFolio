@@ -21,6 +21,7 @@
 		C9CAE7E82800E3AD006E9F55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CAE7E62800E3AD006E9F55 /* LaunchScreen.storyboard */; };
 		C9CAE7F02800F071006E9F55 /* AddNewStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAE7EF2800F071006E9F55 /* AddNewStockViewController.swift */; };
 		C9CAE7F22800F770006E9F55 /* ProfitLossCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CAE7F12800F770006E9F55 /* ProfitLossCalculatorViewController.swift */; };
+		C9F878D8282BFFC000E5BA7F /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = C9F878D7282BFFC000E5BA7F /* Charts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9F878D8282BFFC000E5BA7F /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +141,9 @@
 			dependencies = (
 			);
 			name = "Stock PortFolio";
+			packageProductDependencies = (
+				C9F878D7282BFFC000E5BA7F /* Charts */,
+			);
 			productName = "Stock PortFolio";
 			productReference = C9CAE7D82800E3AC006E9F55 /* Stock PortFolio.app */;
 			productType = "com.apple.product-type.application";
@@ -167,6 +172,9 @@
 				Base,
 			);
 			mainGroup = C9CAE7CF2800E3AC006E9F55;
+			packageReferences = (
+				C9F878D6282BFFC000E5BA7F /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = C9CAE7D92800E3AC006E9F55 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -432,6 +440,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C9F878D6282BFFC000E5BA7F /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9F878D7282BFFC000E5BA7F /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9F878D6282BFFC000E5BA7F /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C9CAE7D02800E3AC006E9F55 /* Project object */;
 }

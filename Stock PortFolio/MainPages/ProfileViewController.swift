@@ -25,8 +25,15 @@ class ProfileViewController: UIViewController {
     @IBOutlet var biggestLossLabel: UILabel!
     @IBOutlet var totalTradesMadeLabel: UILabel!
     
+    var numberOfTimesProfile = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if numberOfTimesProfile < 3 {
+            numberOfTimesProfile += 1
+            //run function
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -114,6 +121,7 @@ class ProfileViewController: UIViewController {
             netWorthLabel.textColor = .black
         }
     }
+    
 }
 
 //adds commas to doubles

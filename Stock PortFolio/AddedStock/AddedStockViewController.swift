@@ -27,12 +27,18 @@ class AddedStockViewController: UIViewController {
     
     var filteredStockArray: [StockInfo]?
     
+    var numberOfTimesAddedStock = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        if numberOfTimesAddedStock < 3 {
+            numberOfTimesAddedStock += 1
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

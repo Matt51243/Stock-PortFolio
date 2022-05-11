@@ -16,6 +16,8 @@ class ProfitLossCalculatorViewController: UIViewController {
     
     @IBOutlet var calculateButton: UIButton!
     
+    var numberOfTimesProfitLoss = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupToolbar()
@@ -23,6 +25,12 @@ class ProfitLossCalculatorViewController: UIViewController {
         //Disabled the calculate button if textfields are empty
         calculateButton.isEnabled = false
         [buyPrice, sellPrice, shares].forEach({ $0?.addTarget(self, action: #selector(editingChanged), for: .editingChanged)})
+        
+        if numberOfTimesProfitLoss < 3 {
+            numberOfTimesProfitLoss += 1
+            //run function 
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

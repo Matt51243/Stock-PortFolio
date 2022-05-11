@@ -63,15 +63,15 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
     //For Deleting stocks
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let alert = UIAlertController(title: "Are You Sure", message: "Are you sure you want to do this? This will be permanently deleted.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
             if editingStyle == .delete {
                 stockArray.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .automatic)
             }
         }))
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
@@ -102,6 +102,9 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
         return cell
     }
 }
+
+//For the Animation Function
+
 
 //For The Custom Color
 extension UIColor {
