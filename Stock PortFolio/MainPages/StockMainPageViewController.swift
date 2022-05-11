@@ -21,6 +21,7 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        stockArray = StockInfo.loadFromFile() ?? []
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,7 +43,7 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
     }
     @IBSegueAction func goToStockInfo(_ coder: NSCoder, sender: Any?) -> AddedStockViewController? {
         let stock = sender as! StockInfo
-        return AddedStockViewController(tickerSymbol: stock.tickerSymbol, shares: String(stock.shares), boughtPrice: stock.boughtPrice, soldPrice: stock.soldPrice, profitLoss: (stock.soldPrice * Double(stock.shares)) - (stock.boughtPrice * Double(stock.shares)), coder: coder)
+        return AddedStockViewController(tickerSymbol: stock.tickerSymbol, shares: String(stock.shares), boughtPrice: stock.boughtPrice, soldPrice: stock.soldPrice, profitLoss: (stock.soldPrice * Double(stock.shares)) - (stock.boughtPrice * Double(stock.shares)), filteredStockArray: nil, coder: coder)
     }
     
     //segue action for when they save the stock it adds it to the tableView
@@ -50,6 +51,7 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
         guard segue.identifier == "saveUnwind", let sourceViewController = segue.source as? AddNewStockViewController, let stock = sourceViewController.stockInfo else { return }
         let indexPath = IndexPath(row: stockArray.count, section: 0)
         stockArray.append(stock)
+        StockInfo.saveToFile(stocks: stockArray)
         tableView.insertRows(at: [indexPath], with: .automatic)
     }
     

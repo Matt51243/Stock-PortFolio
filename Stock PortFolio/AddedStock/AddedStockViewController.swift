@@ -25,6 +25,8 @@ class AddedStockViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
+    var filteredStockArray: [StockInfo]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
@@ -49,24 +51,30 @@ class AddedStockViewController: UIViewController {
             totalMoneyMadeLostLabel.text = "You Broke Even!"
         }
         let tickerSymbolToUse = tickerSymbolLabel.text
-        
-        let filteredStockArray = stockArray.filter { $0.tickerSymbol == tickerSymbolToUse }
-        if filteredStockArray.count == 0 {
+        filteredStockArray = stockArray.filter { $0.tickerSymbol == tickerSymbolToUse }
+        if filteredStockArray?.count ?? 0 > 0 {
+            for (index, stock) in filteredStockArray!.enumerated() {
+                if stock.tickerSymbol == tickerSymbol && stock.shares == Int(shares) && stock.boughtPrice == boughtPrice && stock.soldPrice == soldPrice {
+                    filteredStockArray?.remove(at: index)
+                }
+            }
+        }
+        if filteredStockArray?.count == 0 {
             
-        } else if filteredStockArray.count >= 1 {
+        } else if filteredStockArray?.count ?? 0 >= 1 {
             NoOtherTradesLabel.isHidden = true
-            print(filteredStockArray.count)
         }
     }
       
     
     
-    init?(tickerSymbol: String, shares: String, boughtPrice: Double, soldPrice: Double, profitLoss: Double, coder: NSCoder) {
+    init?(tickerSymbol: String, shares: String, boughtPrice: Double, soldPrice: Double, profitLoss: Double, filteredStockArray: [StockInfo]?, coder: NSCoder) {
         self.tickerSymbol = tickerSymbol
         self.shares = shares
         self.boughtPrice = boughtPrice
         self.soldPrice = soldPrice
         self.profitLoss = profitLoss
+        self.filteredStockArray = filteredStockArray
         super.init(coder: coder)   
     }
     required init?(coder: NSCoder) {
@@ -76,14 +84,16 @@ class AddedStockViewController: UIViewController {
 
 extension AddedStockViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return filteredStockArray?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OtherTradesCell", for: indexPath) as! OtherTradesTableViewCell
-        cell.OtherTradesSharesLabel.text = String("\(shares) Shares")
-        cell.OtherTradesTotalProfitLossLabel.text = shares
-        
+        if let stock = filteredStockArray?[indexPath.row] {
+            cell.OtherTradesSharesLabel.text = String("\(stock.shares) Shares")
+            cell.OtherTradesTotalProfitLossLabel.text = String(stock.boughtPrice)
+        }
+
         return cell
     }
 }

@@ -37,12 +37,18 @@ class AverageStockPriceViewController: UIViewController {
     @IBOutlet var sharesTextField5: UITextField!
     @IBOutlet var priceBoughtLabel5: UILabel!
     @IBOutlet var priceBought5: UITextField!
+    
+    var numberOfTimesAverageStock = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         hideOption3()
         hideOption4()
         hideOption5()
+        if numberOfTimesAverageStock < 3 {
+            numberOfTimesAverageStock += 1
+            //run function
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
