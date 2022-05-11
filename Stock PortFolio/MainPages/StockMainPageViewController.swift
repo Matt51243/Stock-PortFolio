@@ -10,7 +10,12 @@ import UIKit
 let customGreenColor = UIColor(rgb: 0x55B400)
 let customRedColor = UIColor(rgb: 0xDD1E1C)
 
-var stockArray: [StockInfo] = []
+
+var stockArray: [StockInfo] = [] {
+    didSet {
+        StockInfo.saveToFile(stocks: stockArray)
+    }
+}
 
 class StockMainPageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -51,7 +56,6 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
         guard segue.identifier == "saveUnwind", let sourceViewController = segue.source as? AddNewStockViewController, let stock = sourceViewController.stockInfo else { return }
         let indexPath = IndexPath(row: stockArray.count, section: 0)
         stockArray.append(stock)
-        StockInfo.saveToFile(stocks: stockArray)
         tableView.insertRows(at: [indexPath], with: .automatic)
     }
     

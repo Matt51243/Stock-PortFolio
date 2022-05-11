@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Charts
 
 class ProfileViewController: UIViewController {
     
@@ -25,10 +26,25 @@ class ProfileViewController: UIViewController {
     @IBOutlet var biggestLossLabel: UILabel!
     @IBOutlet var totalTradesMadeLabel: UILabel!
     
+    @IBOutlet var pieChart: PieChartView!
+    
     var numberOfTimesProfile = 0
+    
+    //DELETE LATER
+    var profits = PieChartDataEntry(value: 0)
+    var losses = PieChartDataEntry(value: 0)
+    
+    var profitsLossDataEntries = [PieChartDataEntry]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTotalTrades()
+        calculateTotalProfit()
+        calculateTotalLosses()
+        biggestProfit()
+        biggestLoss()
+        calculateNetWorth()
+        profitsLossDataEntries = [profits, losses]
         
         if numberOfTimesProfile < 3 {
             numberOfTimesProfile += 1
@@ -38,13 +54,7 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         overrideUserInterfaceStyle = .light
-
-        setTotalTrades()
-        calculateTotalProfit()
-        calculateTotalLosses()
-        biggestProfit()
-        biggestLoss()
-        calculateNetWorth()
+        updateChartData()
     }
     
     //sets the totalTradesMadeLabel to the amount of trades that they have
@@ -66,6 +76,15 @@ class ProfileViewController: UIViewController {
 
                 calculatedProfitArray.append(calculatedProfit)
                 let totalAddedProfit = calculatedProfitArray.reduce(0, +)
+                let totalAddedLosses = calculatedLossArray.reduce(0, +)
+                let absoulteValueLosses = abs(totalAddedLosses)
+                
+                let total = totalAddedProfit + absoulteValueLosses
+                let percentage = totalAddedProfit / total
+                let realPerentage = percentage * 100
+
+                profits.value = realPerentage
+                profits.label = "Profit"
                 totalProfitLabel.text = String("\(totalAddedProfit.withCommas())")
             }
         }
@@ -82,6 +101,15 @@ class ProfileViewController: UIViewController {
                 calculatedLossArray.append(calculatedLoss)
                 let totalAddedLosses = calculatedLossArray.reduce(0, +)
                 let absoulteValueLosses = abs(totalAddedLosses)
+                let totalAddedProfit = calculatedProfitArray.reduce(0, +)
+                
+                let total = totalAddedProfit + absoulteValueLosses
+                let percentage = absoulteValueLosses / total
+                let realPercentage = percentage * 100
+                
+
+                losses.value = realPercentage
+                losses.label = "Losses"
                 totalLossesLabel.text = String("- \(absoulteValueLosses.withCommas())")
             }
         }
@@ -122,6 +150,22 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    //Sets up the Pie Chart
+    func updateChartData() {
+        pieChart.chartDescription?.enabled = false
+        pieChart.drawHoleEnabled = false
+        pieChart.rotationAngle = 270
+        pieChart.rotationEnabled = false
+        pieChart.isUserInteractionEnabled = false
+        
+        let chartDataSet = PieChartDataSet(entries: profitsLossDataEntries, label: nil)
+        let chartData = PieChartData(dataSet: chartDataSet)
+        
+        let colors = [UIColor(rgb: 0x55B400), UIColor(rgb: 0xDD1E1C)]
+        chartDataSet.colors = colors
+        
+        pieChart.data = chartData
+    }
 }
 
 //adds commas to doubles
