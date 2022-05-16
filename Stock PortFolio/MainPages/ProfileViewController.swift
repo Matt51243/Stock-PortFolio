@@ -75,9 +75,6 @@ class ProfileViewController: UIViewController {
 
                 calculatedProfitArray.append(calculatedProfit)
                 let totalAddedProfit = calculatedProfitArray.reduce(0, +)
-                let totalAddedLosses = calculatedLossArray.reduce(0, +)
-                let absoulteValueLosses = abs(totalAddedLosses)
-                
 
                 totalProfitLabel.text = String("\(totalAddedProfit.withCommas())")
             }
