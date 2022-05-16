@@ -79,12 +79,7 @@ class ProfileViewController: UIViewController {
                 let totalAddedLosses = calculatedLossArray.reduce(0, +)
                 let absoulteValueLosses = abs(totalAddedLosses)
                 
-                let total = totalAddedProfit + absoulteValueLosses
-//                let percentage = totalAddedProfit / total
-//                let realPerentage = percentage * 100
 
-                profits.value = total
-                profits.label = "Profit"
                 totalProfitLabel.text = String("\(totalAddedProfit.withCommas())")
             }
         }
@@ -103,15 +98,21 @@ class ProfileViewController: UIViewController {
                 let absoulteValueLosses = abs(totalAddedLosses)
                 let totalAddedProfit = calculatedProfitArray.reduce(0, +)
                 
-                let notTotal = totalAddedProfit + totalAddedLosses
-                let total = totalAddedProfit - notTotal
+                //Use for finding the percentage
+                let total: Double = totalAddedProfit + absoulteValueLosses
                 
-//                let percentage = absoulteValueLosses / total
-//                let realPercentage = percentage * 100
-                
+                //For the Profit part
+                let realTotal: Double = totalAddedProfit / (total)
+                let realPerentage = realTotal * 100
+                profits.value = realPerentage
+                profits.label = "Profit"
 
-                losses.value = total
+                // For the Losses Part
+                let percentage = absoulteValueLosses / (total)
+                let realPercentage = percentage * 100
+                losses.value = realPercentage
                 losses.label = "Losses"
+                
                 totalLossesLabel.text = String("- \(absoulteValueLosses.withCommas())")
             }
         }

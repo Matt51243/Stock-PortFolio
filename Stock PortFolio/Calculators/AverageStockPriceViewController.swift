@@ -42,6 +42,7 @@ class AverageStockPriceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupToolbar()
         hideOption3()
         hideOption4()
         hideOption5()
@@ -169,5 +170,29 @@ class AverageStockPriceViewController: UIViewController {
     
     @IBAction func calculateButton(_ sender: Any) {
         calculateAveragePrice()
+    }
+    
+    //makes the numberpad have the done button
+    func setupToolbar() {
+        let bar = UIToolbar()
+        let doneBtn = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissMyKeyboard))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        bar.items = [flexSpace, flexSpace, doneBtn]
+        bar.sizeToFit()
+        sharesTextField.inputAccessoryView = bar
+        sharesTextfield2.inputAccessoryView = bar
+        sharesTextField3.inputAccessoryView = bar
+        sharesTextField4.inputAccessoryView = bar
+        sharesTextField5.inputAccessoryView = bar
+        
+        buyPriceTextField.inputAccessoryView = bar
+        priceBought2.inputAccessoryView = bar
+        priceBought3.inputAccessoryView = bar
+        priceBought4.inputAccessoryView = bar
+        priceBought5.inputAccessoryView = bar
+    }
+    
+    @objc func dismissMyKeyboard() {
+        view.endEditing(true)
     }
 }
