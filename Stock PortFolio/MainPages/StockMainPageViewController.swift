@@ -45,6 +45,7 @@ class StockMainPageViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentStock = stockArray[indexPath.row]
         performSegue(withIdentifier: "viewStock", sender: currentStock)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     @IBSegueAction func goToStockInfo(_ coder: NSCoder, sender: Any?) -> AddedStockViewController? {
         let stock = sender as! StockInfo
