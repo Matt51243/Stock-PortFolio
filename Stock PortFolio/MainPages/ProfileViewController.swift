@@ -98,16 +98,37 @@ class ProfileViewController: UIViewController {
                 let total: Double = totalAddedProfit + absoulteValueLosses
                 
                 //For the Profit part
-                let realTotal: Double = totalAddedProfit / (total)
-                let realPerentage = realTotal * 100
-                profits.value = realPerentage
-                profits.label = "Profit"
-
-                // For the Losses Part
-                let percentage = absoulteValueLosses / (total)
-                let realPercentage = percentage * 100
-                losses.value = realPercentage
-                losses.label = "Losses"
+//                let realTotal: Double = totalAddedProfit / (total)
+//                let realPerentage = realTotal * 100
+//                profits.value = realPerentage
+////
+//
+//                // For the Losses Part
+//                let percentage = absoulteValueLosses / (total)
+//                let realPercentage = percentage * 100
+//                losses.value = realPercentage
+//                losses.label = "Losses"
+                
+                //For the Losses Part
+                losses.value = Double(calculatedLossArray.count)
+                if calculatedLossArray.count == 0 {
+                    losses.label = "No Trades"
+                } else if calculatedLossArray.count == 1 {
+                    losses.label = "Trade"
+                } else if calculatedLossArray.count >= 2 {
+                    losses.label = "Trades"
+                }
+                
+                //For the Profits Part
+                profits.value = Double(calculatedProfitArray.count)
+                if calculatedProfitArray.count == 0 {
+                    profits.label = "No Trades"
+                } else if calculatedProfitArray.count == 1 {
+                    profits.label = "Trade"
+                } else if calculatedProfitArray.count >= 2 {
+                    profits.label = "Trades"
+                }
+                
                 
                 totalLossesLabel.text = String("- \(absoulteValueLosses.withCommas())")
             }
@@ -155,8 +176,7 @@ class ProfileViewController: UIViewController {
         pieChart.drawHoleEnabled = true
         pieChart.rotationAngle = 270
         pieChart.rotationEnabled = false
-        pieChart.isUserInteractionEnabled = false
-        
+ 
         let chartDataSet = PieChartDataSet(entries: profitsLossDataEntries, label: nil)
         let chartData = PieChartData(dataSet: chartDataSet)
         
