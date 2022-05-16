@@ -30,7 +30,6 @@ class ProfileViewController: UIViewController {
     
     var numberOfTimesProfile = 0
     
-    //DELETE LATER
     var profits = PieChartDataEntry(value: 0)
     var losses = PieChartDataEntry(value: 0)
     
@@ -156,7 +155,7 @@ class ProfileViewController: UIViewController {
     //Sets up the Pie Chart
     func updateChartData() {
         pieChart.chartDescription?.enabled = false
-        pieChart.drawHoleEnabled = false
+        pieChart.drawHoleEnabled = true
         pieChart.rotationAngle = 270
         pieChart.rotationEnabled = false
         pieChart.isUserInteractionEnabled = false
