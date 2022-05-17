@@ -95,7 +95,7 @@ class ProfileViewController: UIViewController {
                 let totalAddedProfit = calculatedProfitArray.reduce(0, +)
                 
                 //Use for finding the percentage
-                let total: Double = totalAddedProfit + absoulteValueLosses
+//                let total: Double = totalAddedProfit + absoulteValueLosses
                 
                 //For the Profit part
 //                let realTotal: Double = totalAddedProfit / (total)
@@ -128,8 +128,7 @@ class ProfileViewController: UIViewController {
                 } else if calculatedProfitArray.count >= 2 {
                     profits.label = "Trades"
                 }
-                
-                
+
                 totalLossesLabel.text = String("- \(absoulteValueLosses.withCommas())")
             }
         }
@@ -173,7 +172,8 @@ class ProfileViewController: UIViewController {
     //Sets up the Pie Chart
     func updateChartData() {
         pieChart.chartDescription?.enabled = false
-        pieChart.drawHoleEnabled = true
+        pieChart.holeRadiusPercent = 0.35
+        pieChart.holeColor = UIColor(red: 242, green: 242, blue: 237)
         pieChart.rotationAngle = 270
         pieChart.rotationEnabled = false
  
@@ -184,6 +184,10 @@ class ProfileViewController: UIViewController {
         chartDataSet.colors = colors
         
         pieChart.data = chartData
+
+        let formatter = NumberFormatter()
+        formatter.minimumFractionDigits = 0
+        chartData.setValueFormatter(DefaultValueFormatter(formatter: formatter))
     }
 }
 
