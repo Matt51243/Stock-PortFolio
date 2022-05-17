@@ -723,92 +723,82 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zap-rK-x6h">
-                                <rect key="frame" x="30" y="129" width="354" height="32"/>
-                                <segments>
-                                    <segment title="Basic"/>
-                                    <segment title="Advanced"/>
-                                </segments>
-                                <connections>
-                                    <action selector="indexChanged:" destination="lM0-Y6-gcH" eventType="valueChanged" id="cGq-jn-hnr"/>
-                                </connections>
-                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticker Symbol:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzR-f5-6AQ">
-                                <rect key="frame" x="30" y="200" width="121" height="25"/>
+                                <rect key="frame" x="30" y="138" width="121" height="25"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shares:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcU-i0-KyC">
-                                <rect key="frame" x="30" y="350" width="61" height="25"/>
+                                <rect key="frame" x="30" y="288" width="61" height="25"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bought Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5O-uF-5xb">
-                                <rect key="frame" x="30" y="250" width="111" height="25"/>
+                                <rect key="frame" x="30" y="188" width="111" height="25"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sold Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXj-pY-i3c">
-                                <rect key="frame" x="30" y="300" width="87" height="25"/>
+                                <rect key="frame" x="30" y="238" width="87" height="25"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Ticker Symbol" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u5d-pN-EF8">
-                                <rect key="frame" x="166" y="195" width="218" height="34"/>
+                                <rect key="frame" x="166" y="139" width="218" height="34"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Price You Bought At" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hj4-xQ-Pti">
-                                <rect key="frame" x="156" y="245" width="228" height="34"/>
+                                <rect key="frame" x="156" y="189" width="228" height="34"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Price You Sold At" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kdu-hF-5QK">
-                                <rect key="frame" x="132" y="295" width="252" height="34"/>
+                                <rect key="frame" x="132" y="239" width="252" height="34"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Total Amount of Shares" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q8N-mJ-luJ">
-                                <rect key="frame" x="106" y="345" width="278" height="34"/>
+                                <rect key="frame" x="106" y="289" width="278" height="34"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Bought: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7v-Sb-7dt">
-                                <rect key="frame" x="30" y="439" width="116" height="25"/>
+                                <rect key="frame" x="30" y="383" width="116" height="25"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Sold:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaS-Hq-RSs">
-                                <rect key="frame" x="30" y="489" width="88" height="25"/>
+                                <rect key="frame" x="30" y="433" width="88" height="25"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="63Y-5n-eyT">
-                                <rect key="frame" x="30" y="479" width="354" height="216"/>
+                                <rect key="frame" x="30" y="423" width="354" height="216"/>
                                 <connections>
                                     <action selector="boughtDateChanged:" destination="lM0-Y6-gcH" eventType="valueChanged" id="cMv-hE-xCW"/>
                                 </connections>
                             </datePicker>
                             <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="12i-p3-vOw">
-                                <rect key="frame" x="30" y="524" width="354" height="216"/>
+                                <rect key="frame" x="30" y="468" width="354" height="216"/>
                                 <connections>
                                     <action selector="soldDateChanged:" destination="lM0-Y6-gcH" eventType="valueChanged" id="4OT-ng-tfK"/>
                                 </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MM/DD/YY, HH:MM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lC-T4-sUf">
-                                <rect key="frame" x="246.5" y="441" width="137.5" height="20.5"/>
+                                <rect key="frame" x="246.5" y="385" width="137.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MM/DD/YY, HH:MM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WY0-ZL-hs8">
-                                <rect key="frame" x="246.5" y="490.5" width="137.5" height="20.5"/>
+                                <rect key="frame" x="246.5" y="434.5" width="137.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -817,11 +807,11 @@
                         <viewLayoutGuide key="safeArea" id="twq-gd-FZA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="u5d-pN-EF8" firstAttribute="top" secondItem="RkT-a5-DyT" secondAttribute="bottom" constant="45" id="0Jz-Q5-rfC"/>
                             <constraint firstItem="63Y-5n-eyT" firstAttribute="top" secondItem="W7v-Sb-7dt" secondAttribute="bottom" constant="15" id="1Ye-Mo-Id5"/>
+                            <constraint firstItem="tzR-f5-6AQ" firstAttribute="top" secondItem="i1U-g4-s3a" secondAttribute="bottom" constant="45" id="238-5q-2N9"/>
                             <constraint firstItem="iXj-pY-i3c" firstAttribute="top" secondItem="A5O-uF-5xb" secondAttribute="bottom" constant="25" id="2bP-Cj-l9u"/>
-                            <constraint firstItem="twq-gd-FZA" firstAttribute="trailing" secondItem="Zap-rK-x6h" secondAttribute="trailing" constant="30" id="53B-Vg-ya2"/>
                             <constraint firstItem="W7v-Sb-7dt" firstAttribute="top" secondItem="q8N-mJ-luJ" secondAttribute="bottom" constant="60" id="5AD-a0-X4X"/>
-                            <constraint firstItem="tzR-f5-6AQ" firstAttribute="top" secondItem="Zap-rK-x6h" secondAttribute="bottom" constant="40" id="7bo-p2-MT0"/>
                             <constraint firstItem="A5O-uF-5xb" firstAttribute="leading" secondItem="twq-gd-FZA" secondAttribute="leading" constant="30" id="BFd-Vo-ERu"/>
                             <constraint firstItem="6lC-T4-sUf" firstAttribute="top" secondItem="q8N-mJ-luJ" secondAttribute="bottom" constant="62" id="Ded-06-Yjq"/>
                             <constraint firstItem="tzR-f5-6AQ" firstAttribute="leading" secondItem="twq-gd-FZA" secondAttribute="leading" constant="30" id="FGC-b3-C6b"/>
@@ -833,7 +823,6 @@
                             <constraint firstItem="Kdu-hF-5QK" firstAttribute="top" secondItem="Hj4-xQ-Pti" secondAttribute="bottom" constant="16" id="ORN-ps-r6K"/>
                             <constraint firstItem="hcU-i0-KyC" firstAttribute="top" secondItem="iXj-pY-i3c" secondAttribute="bottom" constant="25" id="OZ2-gY-6js"/>
                             <constraint firstItem="hcU-i0-KyC" firstAttribute="leading" secondItem="twq-gd-FZA" secondAttribute="leading" constant="30" id="PR2-nU-ZWm"/>
-                            <constraint firstItem="u5d-pN-EF8" firstAttribute="top" secondItem="Zap-rK-x6h" secondAttribute="bottom" constant="35" id="QEb-6d-OES"/>
                             <constraint firstItem="q8N-mJ-luJ" firstAttribute="leading" secondItem="hcU-i0-KyC" secondAttribute="trailing" constant="15" id="QGP-wB-xlz"/>
                             <constraint firstItem="Kdu-hF-5QK" firstAttribute="leading" secondItem="iXj-pY-i3c" secondAttribute="trailing" constant="15" id="QNs-Ct-lrM"/>
                             <constraint firstItem="twq-gd-FZA" firstAttribute="trailing" secondItem="u5d-pN-EF8" secondAttribute="trailing" constant="30" id="RPu-el-vbB"/>
@@ -841,9 +830,7 @@
                             <constraint firstItem="iaS-Hq-RSs" firstAttribute="leading" secondItem="twq-gd-FZA" secondAttribute="leading" constant="30" id="U7j-QD-vbT"/>
                             <constraint firstItem="i1U-g4-s3a" firstAttribute="top" secondItem="twq-gd-FZA" secondAttribute="top" constant="10" id="VTw-VD-bVn"/>
                             <constraint firstItem="Hj4-xQ-Pti" firstAttribute="leading" secondItem="A5O-uF-5xb" secondAttribute="trailing" constant="15" id="ca9-jK-zxn"/>
-                            <constraint firstItem="Zap-rK-x6h" firstAttribute="leading" secondItem="twq-gd-FZA" secondAttribute="leading" constant="30" id="cpi-UT-voe"/>
                             <constraint firstItem="twq-gd-FZA" firstAttribute="trailing" secondItem="Kdu-hF-5QK" secondAttribute="trailing" constant="30" id="dFk-ck-Dly"/>
-                            <constraint firstItem="Zap-rK-x6h" firstAttribute="top" secondItem="sIl-sr-tnP" secondAttribute="bottom" constant="45" id="gcM-Hx-aig"/>
                             <constraint firstItem="sIl-sr-tnP" firstAttribute="leading" secondItem="i1U-g4-s3a" secondAttribute="trailing" constant="54" id="hXL-7z-ISp"/>
                             <constraint firstItem="twq-gd-FZA" firstAttribute="trailing" secondItem="q8N-mJ-luJ" secondAttribute="trailing" constant="30" id="hcT-qO-Wbj"/>
                             <constraint firstItem="q8N-mJ-luJ" firstAttribute="top" secondItem="Kdu-hF-5QK" secondAttribute="bottom" constant="16" id="iyj-NT-tYW"/>
@@ -865,7 +852,6 @@
                     <navigationItem key="navigationItem" id="aXV-QQ-4Yd"/>
                     <connections>
                         <outlet property="SaveButton" destination="RkT-a5-DyT" id="Puk-zj-CbO"/>
-                        <outlet property="basicOrAdvanced" destination="Zap-rK-x6h" id="Dh6-Cg-RCe"/>
                         <outlet property="boughtPrice" destination="Hj4-xQ-Pti" id="kda-gK-Ki9"/>
                         <outlet property="soldPrice" destination="Kdu-hF-5QK" id="Vr5-cj-5xt"/>
                         <outlet property="tickerSymbol" destination="u5d-pN-EF8" id="5JZ-sk-wDd"/>
