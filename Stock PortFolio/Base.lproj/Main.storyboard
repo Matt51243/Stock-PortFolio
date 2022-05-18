@@ -107,8 +107,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxZ-eF-Kea" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="64.5" y="296" width="285" height="321"/>
+                                <rect key="frame" x="65" y="296" width="285" height="321"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Stocks Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Pv-vi-n8X">
+                                        <rect key="frame" x="0.0" y="145.5" width="285" height="30.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4Pv-vi-n8X" secondAttribute="trailing" id="Jop-og-H6f"/>
+                                    <constraint firstAttribute="bottom" secondItem="4Pv-vi-n8X" secondAttribute="bottom" constant="145" id="MtJ-3X-oBn"/>
+                                    <constraint firstItem="4Pv-vi-n8X" firstAttribute="leading" secondItem="lxZ-eF-Kea" secondAttribute="leading" id="m1Q-d2-xXV"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X7J-pt-xq4"/>
@@ -123,7 +136,6 @@
                             <constraint firstItem="QyE-bJ-Mwe" firstAttribute="top" secondItem="jo6-Z6-jhQ" secondAttribute="bottom" constant="14" id="8gH-uD-Rg2"/>
                             <constraint firstItem="X7J-pt-xq4" firstAttribute="trailing" secondItem="xRv-kj-XFl" secondAttribute="trailing" constant="53" id="9rf-EY-wyp"/>
                             <constraint firstItem="X7J-pt-xq4" firstAttribute="trailing" secondItem="UFX-YL-8ft" secondAttribute="trailing" constant="53" id="Cku-3e-Mdc"/>
-                            <constraint firstItem="X7J-pt-xq4" firstAttribute="trailing" secondItem="lxZ-eF-Kea" secondAttribute="trailing" constant="64.5" id="EIk-Wp-zsB"/>
                             <constraint firstItem="X7J-pt-xq4" firstAttribute="trailing" secondItem="OO9-gX-aYV" secondAttribute="trailing" constant="53" id="I2c-uP-lR3"/>
                             <constraint firstItem="jo6-Z6-jhQ" firstAttribute="leading" secondItem="X7J-pt-xq4" secondAttribute="leading" constant="53" id="J3k-fH-JFY"/>
                             <constraint firstItem="X7J-pt-xq4" firstAttribute="trailing" secondItem="OsZ-3G-V24" secondAttribute="trailing" constant="53" id="PC3-Fp-Vwv"/>
@@ -135,6 +147,7 @@
                             <constraint firstItem="X7J-pt-xq4" firstAttribute="trailing" secondItem="Gmp-5F-CVb" secondAttribute="trailing" constant="30" id="Tno-Zs-sCS"/>
                             <constraint firstItem="aX7-zi-gMT" firstAttribute="top" secondItem="guN-YF-G3n" secondAttribute="bottom" constant="12" id="UbS-lp-FAZ"/>
                             <constraint firstItem="u1l-d6-2BA" firstAttribute="top" secondItem="Gmp-5F-CVb" secondAttribute="bottom" constant="62.5" id="XaP-Vo-B7n"/>
+                            <constraint firstItem="lxZ-eF-Kea" firstAttribute="leading" secondItem="X7J-pt-xq4" secondAttribute="leading" constant="65" id="bZJ-FK-ex9"/>
                             <constraint firstItem="1uK-Kv-SGD" firstAttribute="top" secondItem="Gmp-5F-CVb" secondAttribute="bottom" constant="20" id="bqk-YB-bYT"/>
                             <constraint firstItem="xRv-kj-XFl" firstAttribute="top" secondItem="OrQ-BL-Tie" secondAttribute="bottom" constant="22" id="dhi-7i-RyR"/>
                             <constraint firstItem="X7J-pt-xq4" firstAttribute="trailing" secondItem="kz4-H8-J9J" secondAttribute="trailing" constant="10" id="dxL-7U-3Sl"/>
@@ -142,7 +155,7 @@
                             <constraint firstItem="TLu-H0-MjU" firstAttribute="leading" secondItem="X7J-pt-xq4" secondAttribute="leading" constant="30" id="gTl-jd-0zk"/>
                             <constraint firstItem="Hrv-yQ-OAL" firstAttribute="leading" secondItem="X7J-pt-xq4" secondAttribute="leading" constant="53" id="gcl-kg-BHT"/>
                             <constraint firstItem="OsZ-3G-V24" firstAttribute="top" secondItem="OO9-gX-aYV" secondAttribute="bottom" constant="14" id="kFn-zm-a3F"/>
-                            <constraint firstItem="lxZ-eF-Kea" firstAttribute="leading" secondItem="X7J-pt-xq4" secondAttribute="leading" constant="64.5" id="kVq-za-ldK"/>
+                            <constraint firstItem="X7J-pt-xq4" firstAttribute="trailing" secondItem="lxZ-eF-Kea" secondAttribute="trailing" constant="64" id="kqe-0N-Ajl"/>
                             <constraint firstItem="TLu-H0-MjU" firstAttribute="top" secondItem="1uK-Kv-SGD" secondAttribute="bottom" constant="10" id="pkE-13-4Wa"/>
                             <constraint firstItem="X7J-pt-xq4" firstAttribute="bottom" secondItem="xRv-kj-XFl" secondAttribute="bottom" constant="82" id="toA-R4-0Lf"/>
                             <constraint firstItem="kz4-H8-J9J" firstAttribute="leading" secondItem="X7J-pt-xq4" secondAttribute="leading" constant="10" id="uEX-bQ-Sg8"/>
@@ -156,6 +169,7 @@
                         <outlet property="biggestLossLabel" destination="OrQ-BL-Tie" id="xBg-0P-q4J"/>
                         <outlet property="biggestProfitLabel" destination="UFX-YL-8ft" id="0V7-sL-1vV"/>
                         <outlet property="netWorthLabel" destination="u1l-d6-2BA" id="guB-sk-BWf"/>
+                        <outlet property="noStocksLabel" destination="4Pv-vi-n8X" id="SCv-Oq-9Q0"/>
                         <outlet property="pieChart" destination="lxZ-eF-Kea" id="KPS-ht-x72"/>
                         <outlet property="totalLossesLabel" destination="OsZ-3G-V24" id="PST-Fm-FFG"/>
                         <outlet property="totalProfitLabel" destination="OO9-gX-aYV" id="yAS-kU-SlS"/>
@@ -192,7 +206,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gHc-a3-8d2">
-                                <rect key="frame" x="0.0" y="103" width="414" height="587"/>
+                                <rect key="frame" x="0.0" y="103" width="414" height="731"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stockCell" rowHeight="60" id="UGu-ut-nwc" customClass="StockTableViewCell" customModule="Stock_PortFolio" customModuleProvider="target">
@@ -270,9 +284,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3Ou-ve-emZ" secondAttribute="bottom" constant="450" id="7fP-ff-xIU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Ou-ve-emZ" secondAttribute="trailing" constant="42.5" id="7sI-SW-ruV"/>
                             <constraint firstItem="ciI-Yp-8fD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="NML-uL-6fJ"/>
+                            <constraint firstItem="ciI-Yp-8fD" firstAttribute="top" secondItem="gHc-a3-8d2" secondAttribute="bottom" id="NO4-8Q-Pie"/>
                             <constraint firstItem="gHc-a3-8d2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="TFQ-WL-IyM"/>
                             <constraint firstItem="gHc-a3-8d2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZHG-mT-LfM"/>
-                            <constraint firstItem="ciI-Yp-8fD" firstAttribute="top" secondItem="gHc-a3-8d2" secondAttribute="bottom" constant="144" id="bvw-dt-gZg"/>
                             <constraint firstItem="0WR-mh-ZOy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="fRv-wb-AOL"/>
                             <constraint firstItem="gHc-a3-8d2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ow4-qK-4Im"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ciI-Yp-8fD" secondAttribute="trailing" constant="30" id="toM-jE-UdT"/>
@@ -1018,6 +1032,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

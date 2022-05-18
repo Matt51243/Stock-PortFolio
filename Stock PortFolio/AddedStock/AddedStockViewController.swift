@@ -97,7 +97,15 @@ extension AddedStockViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OtherTradesCell", for: indexPath) as! OtherTradesTableViewCell
         if let stock = filteredStockArray?[indexPath.row] {
             cell.OtherTradesSharesLabel.text = String("\(stock.shares) Shares")
-            cell.OtherTradesTotalProfitLossLabel.text = String(stock.boughtPrice)
+            let calculation = (Double(stock.shares) * stock.soldPrice) - (Double(stock.shares) * stock.boughtPrice)
+            if calculation == 0.0 {
+                cell.OtherTradesTotalProfitLossLabel.text = "Broke Even!"
+            } else if calculation <= 0.0 {
+                let absoluteCalculation = abs(calculation)
+                cell.OtherTradesTotalProfitLossLabel.text = "- \(absoluteCalculation.withCommas())"
+            } else if calculation >= 0.001 {
+                cell.OtherTradesTotalProfitLossLabel.text = "\(calculation.withCommas())"
+            }
         }
 
         return cell
