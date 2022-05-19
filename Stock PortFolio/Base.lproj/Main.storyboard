@@ -337,7 +337,7 @@
                                     <action selector="calculateButton:" destination="Dfo-Oe-l9b" eventType="touchUpInside" id="esW-3B-Jzn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiA-4f-mEo">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiA-4f-mEo">
                                 <rect key="frame" x="55" y="686" width="304" height="31"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="+"/>
                                 <connections>
